@@ -25,7 +25,7 @@ igvInterfaz &igvInterfaz::getInstancia() {
  * Crea el mundo que se visualiza en la ventana
  */
 void igvInterfaz::crear_mundo() {  // inicia la cámara
-    _instancia->camara.set(IGV_PARALELA, {6.0, 4.0, 8}, {0, 0, 0}, {0, 1.0, 0}, -1 * 5, 1 * 5, -1 * 5, 1 * 5, -1 * 3,
+    _instancia->camara.set(IGV_PARALELA, {5, 5, 0}, {0, 0, 0}, {0, 1.0, 0}, -1 * 5, 1 * 5, -1 * 5, 1 * 5, -1 * 3,
                            200);
 }
 
@@ -73,21 +73,31 @@ void igvInterfaz::inicia_bucle_visualizacion() {
     glutMainLoop(); // inicia el bucle de visualización de GLUT
 }
 
-/**
- * Método para control de eventos del teclado
- * @param key Código de la tecla pulsada
- * @param x Coordenada X de la posición del cursor del ratón en el momento del
- *          evento de teclado
- * @param y Coordenada Y de la posición del cursor del ratón en el momento del
- *          evento de teclado
- * @pre Se asume que todos los parámetros tienen valores válidos
- * @post Los atributos de la clase pueden cambiar, dependiendo de la tecla pulsada
- */
-void igvInterfaz::keyboardFunc(unsigned char key, int x, int y) {
-    switch (key) {
-        // TODO: Apartado C: incluir aquí el cambio de la cámara para mostrar las vistas planta, perfil, alzado o perspectiva
-        // TODO: Apartado C: incluir aquí la modificación de los grados de libertad del modelo pulsando las teclas correspondientes
+void igvInterfaz::mover_camara() {
+    int num;
+    _instancia->posicion_camara = (_instancia->posicion_camara + 1) % NUM_POSICIONES_CAMARA;
+    num = _instancia->posicion_camara * 3;
 
+    igvPunto3D P0 = {5, 5, 0 + num};
+    igvPunto3D r = {0, 0, 0 + num};
+    igvPunto3D V = {0, 1, 0};
+
+    _instancia->camara.set(IGV_PARALELA, P0, r, V, -1 * 5, 1 * 5, -1 * 5, 1 * 5, -1 * 3,
+                           200);
+}
+
+void igvInterfaz::keyboardFunc(unsigned char key, int x, int y) {
+
+    switch (key) {
+        case 'r':
+            _instancia->mover_camara();
+            break;
+        case 'z':
+            _instancia->camara.zoom(-2);
+            break;
+        case 'Z':
+            _instancia->camara.zoom(2);
+            break;
         case 'e': // activa/desactiva la visualizacion de los ejes
             _instancia->escena.set_ejes(!_instancia->escena.get_ejes());
             break;
@@ -122,6 +132,7 @@ void igvInterfaz::keyboardFunc(unsigned char key, int x, int y) {
 
 
     }
+    printf("Posicion: %d\n", _instancia->posicion_camara);
     glutPostRedisplay(); // renueva el contenido de la ventana de vision
 }
 

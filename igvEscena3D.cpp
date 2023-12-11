@@ -8,8 +8,7 @@
 /**
  * Constructor por defecto
  */
-igvEscena3D::igvEscena3D ()
-{  // TODO: Apartado C: inicializar los atributos para el control de los grados de libertad del modelo
+igvEscena3D::igvEscena3D() {  // TODO: Apartado C: inicializar los atributos para el control de los grados de libertad del modelo
     angCabeza = 0;
     angPiernaD = 0;
     angPiernaI = 0;
@@ -20,35 +19,34 @@ igvEscena3D::igvEscena3D ()
 /**
  * Destructor
  */
-igvEscena3D::~igvEscena3D ()
-{
+igvEscena3D::~igvEscena3D() {
 }
 
 /**
  * Método para pintar los ejes coordenados llamando a funciones de OpenGL
  */
-void igvEscena3D::pintar_ejes()
-{	GLfloat rojo[] = { 1,0,0,1.0 };
-   GLfloat verde[] = { 0, 1, 0, 1.0 };
-   GLfloat azul[] = { 0, 0, 1, 1.0 };
+void igvEscena3D::pintar_ejes() {
+    GLfloat rojo[] = {1, 0, 0, 1.0};
+    GLfloat verde[] = {0, 1, 0, 1.0};
+    GLfloat azul[] = {0, 0, 1, 1.0};
 
-   glMaterialfv ( GL_FRONT, GL_EMISSION, rojo );
-   glBegin ( GL_LINES );
-   glVertex3f ( 1000, 0, 0 );
-   glVertex3f ( -1000, 0, 0 );
-   glEnd ();
+    glMaterialfv(GL_FRONT, GL_EMISSION, rojo);
+    glBegin(GL_LINES);
+    glVertex3f(1000, 0, 0);
+    glVertex3f(-1000, 0, 0);
+    glEnd();
 
-   glMaterialfv ( GL_FRONT, GL_EMISSION, verde );
-   glBegin ( GL_LINES );
-   glVertex3f ( 0, 1000, 0 );
-   glVertex3f ( 0, -1000, 0 );
-   glEnd ();
+    glMaterialfv(GL_FRONT, GL_EMISSION, verde);
+    glBegin(GL_LINES);
+    glVertex3f(0, 1000, 0);
+    glVertex3f(0, -1000, 0);
+    glEnd();
 
-   glMaterialfv ( GL_FRONT, GL_EMISSION, azul );
-   glBegin ( GL_LINES );
-   glVertex3f ( 0, 0, 1000 );
-   glVertex3f ( 0, 0, -1000 );
-   glEnd ();
+    glMaterialfv(GL_FRONT, GL_EMISSION, azul);
+    glBegin(GL_LINES);
+    glVertex3f(0, 0, 1000);
+    glVertex3f(0, 0, -1000);
+    glEnd();
 }
 
 // Métodos públicos
@@ -60,7 +58,7 @@ void igvEscena3D::base() {
 }
 
 void igvEscena3D::pierna() {
-    GLUquadricObj* cilindro;
+    GLUquadricObj *cilindro;
     cilindro = gluNewQuadric();
     gluQuadricDrawStyle(cilindro, GLU_LINE);
     gluCylinder(cilindro, 0.2, 0.18, 2, 100, 100);
@@ -68,7 +66,7 @@ void igvEscena3D::pierna() {
 }
 
 void igvEscena3D::cuerpo() {
-    GLUquadricObj* cono;
+    GLUquadricObj *cono;
     cono = gluNewQuadric();
     gluQuadricDrawStyle(cono, GLU_SILHOUETTE);
     gluCylinder(cono, 0.18, 1, 2.5, 1500, 1500);
@@ -87,63 +85,63 @@ void igvEscena3D::mano() {
 //DE VISUALIZACION PARA CADA PARTE TIPO: visualizarCabeza(), visualizarPiernaIzq()...
 void igvEscena3D::visualizarPiernaIzq() {
     glPushMatrix();
-        rotarPiernaI(angPiernaI);
-        glPushMatrix();
-            glTranslatef(-0.5, -2, 0);
-            glScalef(0.5, 0.2, 1);
-            base();
-        glPopMatrix();
-        glPushMatrix();
-            glTranslatef(-0.5, 0.1, -0.2);
-            glRotatef(90, 1, 0, 0);
-            pierna();
-        glPopMatrix();
+    rotarPiernaI(angPiernaI);
+    glPushMatrix();
+    glTranslatef(-0.5, -2, 0);
+    glScalef(0.5, 0.2, 1);
+    base();
+    glPopMatrix();
+    glPushMatrix();
+    glTranslatef(-0.5, 0.1, -0.2);
+    glRotatef(90, 1, 0, 0);
+    pierna();
+    glPopMatrix();
     glPopMatrix();
 }
 
 void igvEscena3D::visualizarPiernaDer() {
     glPushMatrix();
-        rotarPiernaD(angPiernaD);
-        glPushMatrix();
-            glTranslatef(0.5, -2, 0);
-            glScalef(0.5, 0.2, 1);
-            base();
-        glPopMatrix();
-        glPushMatrix();
-            glTranslatef(0.5, 0.1, -0.2);
-            glRotatef(90, 1, 0, 0);
-            pierna();
-        glPopMatrix();
+    rotarPiernaD(angPiernaD);
+    glPushMatrix();
+    glTranslatef(0.5, -2, 0);
+    glScalef(0.5, 0.2, 1);
+    base();
+    glPopMatrix();
+    glPushMatrix();
+    glTranslatef(0.5, 0.1, -0.2);
+    glRotatef(90, 1, 0, 0);
+    pierna();
+    glPopMatrix();
     glPopMatrix();
 }
 
 void igvEscena3D::visualizarCuerpo() {
     glPushMatrix();
-        glTranslatef(0, 2.5, 0);
-        glRotatef(90, 1, 0, 0);
-        cuerpo();
+    glTranslatef(0, 2.5, 0);
+    glRotatef(90, 1, 0, 0);
+    cuerpo();
     glPopMatrix();
 }
 
 void igvEscena3D::visualizarBrazoIzq() {
     glPushMatrix();
-        rotarBrazoI(angBrazoI);
-        glPushMatrix();
-            glTranslatef(-1.75, 0.5, 0.2);
-            mano();
-        glPopMatrix();
-        glPushMatrix();
-            glTranslatef(-0.2, 2, 0);
-            glRotatef(-45, 0, 0, 1);
-            glRotatef(90, 1, 0, 0);
-            pierna();
-        glPopMatrix();
+    rotarBrazoI(angBrazoI);
+    glPushMatrix();
+    glTranslatef(-1.75, 0.5, 0.2);
+    mano();
+    glPopMatrix();
+    glPushMatrix();
+    glTranslatef(-0.2, 2, 0);
+    glRotatef(-45, 0, 0, 1);
+    glRotatef(90, 1, 0, 0);
+    pierna();
+    glPopMatrix();
     glPopMatrix();
 }
 
 void igvEscena3D::visualizarBrazoDer() {
     glPushMatrix();
-        //rotarBrazoD(angBrazoD);
+    //rotarBrazoD(angBrazoD);
     glPushMatrix();
     glTranslatef(0.2, 2, 0);
     glRotatef(45, 0, 0, 1);
@@ -151,11 +149,11 @@ void igvEscena3D::visualizarBrazoDer() {
     rotarBrazoD(angBrazoD);
     pierna();
     glPopMatrix();
-        glPushMatrix();
-            glTranslatef(1.75, 0.5, 0);
+    glPushMatrix();
+    glTranslatef(1.75, 0.5, 0);
     rotarBrazoD(angBrazoD);
-            mano();
-        glPopMatrix();
+    mano();
+    glPopMatrix();
 
     glPopMatrix();
 }
@@ -163,13 +161,27 @@ void igvEscena3D::visualizarBrazoDer() {
 void igvEscena3D::visualizarCabeza() {
     rotarCabeza(angCabeza);
     glPushMatrix();
-        glTranslatef(0, 3.2, 0);
-        //rotarCabeza(angCabeza);
-        cabeza();
+    glTranslatef(0, 3.2, 0);
+    //rotarCabeza(angCabeza);
+    cabeza();
     glPopMatrix();
 }
 
-void igvEscena3D::visualizarModelo() {
+void igvEscena3D::visualizarBase() {
+    glPushMatrix(); // Guarda el estado actual de la matriz
+
+    glScalef(1.0, 0.5, 1.0);
+
+    glScalef(2.0, 2.0, 2.0);
+
+    glutSolidCube(1.0);
+
+    glPopMatrix();
+}
+
+void igvEscena3D::visualizarMunneco() {
+    glPushMatrix();
+    // glTranslatef(0,3,0);
     rotarCabeza(angCabeza);
     visualizarPiernaIzq();
     visualizarPiernaDer();
@@ -177,6 +189,7 @@ void igvEscena3D::visualizarModelo() {
     visualizarBrazoIzq();
     visualizarBrazoDer();
     visualizarCabeza();
+    glPopMatrix();
 }
 
 // TODO: Apartado C: añadir aquí los métodos para modificar los grados de libertad del modelo
@@ -200,34 +213,37 @@ void igvEscena3D::rotarBrazoI(int ang) {
     glRotatef(ang, 1, 0, 0);
 }
 
-/**
- * Método con las llamadas OpenGL para visualizar la escena
- */
-void igvEscena3D::visualizar ()
-{  // crear luces
-   GLfloat luz0[4] = { 5.0, 5.0, 5.0, 1 }; // luz puntual
-   glLightfv ( GL_LIGHT0, GL_POSITION, luz0 ); // la luz se coloca aquí si permanece fija y no se mueve con la escena
-   glEnable ( GL_LIGHT0 );
+void igvEscena3D::generarBases() {
 
-   // crear el modelo
-   glPushMatrix (); // guarda la matriz de modelado
+    for (int i = 0; i < 5; ++i) {
+        glPushMatrix();
+        glTranslatef(0, 0, 3 * i);
+        glRotatef(27 * i, 0, 1, 0);
+        visualizarBase();
+        glPushMatrix();
+        glTranslatef(0,2.5,0);
+        visualizarMunneco();
+        glPopMatrix();
+        glPopMatrix();
+    }
+}
 
-   // se pintan los ejes
-   if ( ejes )
-   { pintar_ejes (); }
+void igvEscena3D::visualizar() {  // crear luces
+    GLfloat luz0[4] = {5.0, 5.0, 5.0, 1}; // luz puntual
+    glLightfv(GL_LIGHT0, GL_POSITION, luz0); // la luz se coloca aquí si permanece fija y no se mueve con la escena
+    glEnable(GL_LIGHT0);
 
-   //glLightfv(GL_LIGHT0,GL_POSITION,luz0); // la luz se coloca aquí si se mueve junto con la escena (también habría que desactivar la de arriba).
+    // crear el modelo
+    glPushMatrix(); // guarda la matriz de modelado
 
+    // se pintan los ejes
+    if (ejes) { pintar_ejes(); }
 
+    //glLightfv(GL_LIGHT0,GL_POSITION,luz0); // la luz se coloca aquí si se mueve junto con la escena (también habría que desactivar la de arriba).
 
-   // TODO: Apartado B: aquí hay que añadir la visualización del árbol del modelo utilizando la pila de matrices de OpenGL
-   //       se recomienda crear una método auxiliar que encapsule el código para la visualización
-   //       del modelo, dejando aquí sólo la llamada a ese método, así como distintas funciones una para cada
-   //       parte del modelo.
-    visualizarModelo();
+    generarBases();
 
-
-   glPopMatrix (); // restaura la matriz de modelado
+    glPopMatrix(); // restaura la matriz de modelado
 }
 
 /**
@@ -235,8 +251,8 @@ void igvEscena3D::visualizar ()
  * @retval true Si hay que dibujar los ejes
  * @retval false Si no hay que dibujar los ejes
  */
-bool igvEscena3D::get_ejes ()
-{  return ejes;
+bool igvEscena3D::get_ejes() {
+    return ejes;
 }
 
 /**
@@ -245,8 +261,8 @@ bool igvEscena3D::get_ejes ()
  * @post El estado del objeto cambia en lo que respecta al dibujado de ejes,
  *       de acuerdo al valor pasado como parámetro
  */
-void igvEscena3D::set_ejes ( bool _ejes )
-{  ejes = _ejes;
+void igvEscena3D::set_ejes(bool _ejes) {
+    ejes = _ejes;
 }
 
 int igvEscena3D::getAngCabeza() const {

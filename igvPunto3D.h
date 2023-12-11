@@ -59,6 +59,24 @@ public:
     bool operator!=(const igvPunto3D &p);
 
     void set(const double &x, const double &y, const double &z);
+
+    // Método para obtener la coordenada X
+    double getX() const { return c[0]; }
+
+    // Método para obtener la coordenada Y
+    double getY() const { return c[1]; }
+
+    // Método para obtener la coordenada Z
+    double getZ() const { return c[2]; }
+
+    // Método para establecer la coordenada X
+    void setX(double x) { c[0] = x; }
+
+    // Método para establecer la coordenada Y
+    void setY(double y) { c[1] = y; }
+
+    // Método para establecer la coordenada Z
+    void setZ(double z) { c[2] = z; }
 };
 
 /**

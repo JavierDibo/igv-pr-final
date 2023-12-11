@@ -14,62 +14,77 @@
 /**
  * Partes del modelo
  */
-enum parte
-{	basex   ///< Identifica la base del modelo
-   , cuerpoinferior   ///< Identifica el cuerpo inferior del modelo
-   , cuerposuperior   ///< Identifica el cuerpo superior del modelo
-   , brazo   ///< Identifica el brazo del modelo
+enum parte {
+    basex   ///< Identifica la base del modelo
+    , cuerpoinferior   ///< Identifica el cuerpo inferior del modelo
+    , cuerposuperior   ///< Identifica el cuerpo superior del modelo
+    , brazo   ///< Identifica el brazo del modelo
 };
 
 /**
  * Los objetos de esta clase representan escenas 3D para su visualización
  */
-class igvEscena3D
-{  private:
-      // Atributos
-	   // TODO: Apartado C: añadir quí los atributos para el control de los grados de libertad del modelo
+class igvEscena3D {
+private:
+    // Atributos
+    // TODO: Apartado C: añadir quí los atributos para el control de los grados de libertad del modelo
 
-      int angCabeza;
-      int angPiernaI;
-      int angPiernaD;
-      int angBrazoI;
-      int angBrazoD;
+    int angCabeza;
+    int angPiernaI;
+    int angPiernaD;
+    int angBrazoI;
+    int angBrazoD;
 
-	   // Otros atributos
-      bool ejes = true;   ///< Indica si hay que dibujar los ejes coordenados o no
+    // Otros atributos
+    bool ejes = true;   ///< Indica si hay que dibujar los ejes coordenados o no
 
-   public:
+public:
 
-      // Constructores por defecto y destructor
-      igvEscena3D();
-      ~igvEscena3D();
+    // Constructores por defecto y destructor
+    igvEscena3D();
 
-      // método con las llamadas OpenGL para visualizar la escena
-      void visualizar();
+    ~igvEscena3D();
 
-      // TODO: Apartado B: Métodos para visualizar cada parte del modelo
+    // método con las llamadas OpenGL para visualizar la escena
+    void visualizar();
 
-      void base();
-      void pierna();
-      void cuerpo();
-      void cabeza();
-      void mano();
+    // TODO: Apartado B: Métodos para visualizar cada parte del modelo
 
-      void visualizarPiernaIzq();
-      void visualizarPiernaDer();
-      void visualizarCuerpo();
-      void visualizarBrazoIzq();
-      void visualizarBrazoDer();
-      void visualizarCabeza();
-      void visualizarModelo();
+    void base();
 
-      // TODO: Apartado C: añadir aquí los métodos para modificar los grados de libertad del modelo
+    void pierna();
 
-      void rotarCabeza(int ang);
-      void rotarPiernaD(int ang);
-      void rotarPiernaI(int ang);
-      void rotarBrazoD(int ang);
-      void rotarBrazoI(int ang);
+    void cuerpo();
+
+    void cabeza();
+
+    void mano();
+
+    void visualizarPiernaIzq();
+
+    void visualizarPiernaDer();
+
+    void visualizarCuerpo();
+
+    void visualizarBrazoIzq();
+
+    void visualizarBrazoDer();
+
+    void visualizarCabeza();
+
+    void visualizarMunneco();
+
+    // TODO: Apartado C: añadir aquí los métodos para modificar los grados de libertad del modelo
+
+    void rotarCabeza(int ang);
+
+    void rotarPiernaD(int ang);
+
+    void rotarPiernaI(int ang);
+
+    void rotarBrazoD(int ang);
+
+    void rotarBrazoI(int ang);
 
     int getAngCabeza() const;
 
@@ -91,13 +106,18 @@ class igvEscena3D
 
     void setAngBrazoD(int angBrazoD);
 
+    bool get_ejes();
 
-    bool get_ejes ();
-      void set_ejes ( bool _ejes );
+    void set_ejes(bool _ejes);
 
-   private:
-      void pintar_ejes ();
+    void visualizarBase();
 
+    void visualizarCuadrado();
+
+private:
+    void pintar_ejes();
+
+    void generarBases();
 };
 
 #endif   // __IGVESCENA3D

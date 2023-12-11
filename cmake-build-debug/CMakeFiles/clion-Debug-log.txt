@@ -1,0 +1,122 @@
+C:\Users\jfdg0\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/ninja/win/x64/ninja.exe -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=conan_provider.cmake -G Ninja -S "C:\Users\jfdg0\Downloads\Telegram Desktop\pr3b_conan\pr3b_conan" -B "C:\Users\jfdg0\Downloads\Telegram Desktop\pr3b_conan\pr3b_conan\cmake-build-debug"
+-- The C compiler identification is GNU 13.1.0
+-- The CXX compiler identification is GNU 13.1.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- CMake-Conan: first find_package() found. Installing dependencies with Conan
+-- CMake-Conan: Checking if a default profile exists
+C:\Users\jfdg0\.conan2\profiles\default
+-- CMake-Conan: cmake_system_name=Windows
+-- CMake-Conan: cmake_system_processor=x86_64
+-- CMake-Conan: CMake compiler=GNU
+-- CMake-Conan: CMake compiler version=13.1.0
+-- CMake-Conan: [settings] compiler=gcc
+-- CMake-Conan: [settings] compiler.version=13
+-- Performing Test _CONAN_IS_GNU_LIBSTDCXX
+-- Performing Test _CONAN_IS_GNU_LIBSTDCXX - Success
+-- Performing Test _CONAN_GNU_LIBSTDCXX_IS_CXX11_ABI
+-- Performing Test _CONAN_GNU_LIBSTDCXX_IS_CXX11_ABI - Success
+-- CMake-Conan: Creating profile C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan/cmake-build-debug/conan_host_profile
+-- CMake-Conan: Profile: 
+[settings]
+arch=x86_64
+os=Windows
+compiler=gcc
+compiler.version=13
+compiler.cppstd=14
+compiler.libcxx=libstdc++11
+build_type=Debug
+[conf]
+tools.cmake.cmaketoolchain:generator=Ninja
+tools.build:compiler_executables={"c":"C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/gcc.exe","cpp":"C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/g++.exe"}
+
+-- CMake-Conan: Installing single configuration Debug
+-- CMake-Conan: conan install C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan -of=C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan/cmake-build-debug/conan --profile:host=default;--profile:host=C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan/cmake-build-debug/conan_host_profile;--profile:build=default;--build=missing
+
+======== Input profiles ========
+Profile host:
+[settings]
+arch=x86_64
+build_type=Debug
+compiler=gcc
+compiler.cppstd=14
+compiler.libcxx=libstdc++11
+compiler.version=13
+os=Windows
+[conf]
+tools.cmake.cmaketoolchain:generator=Ninja
+tools.build:compiler_executables={'c': 'C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/gcc.exe', 'cpp': 'C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/g++.exe'}
+
+Profile build:
+[settings]
+arch=x86_64
+build_type=Release
+compiler=gcc
+compiler.cppstd=gnu17
+compiler.libcxx=libstdc++11
+compiler.version=13
+os=Windows
+
+
+======== Computing dependency graph ========
+Graph root
+    conanfile.py: C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan\conanfile.py
+Requirements
+    freeglut/3.4.0#faa2b8377286ee578be419cbecadd8ab - Cache
+    glu/system#ee50fc2ade0e1c0c8ebb3be3ea60e0f5 - Cache
+    khrplatform/cci.20200529#eec32d0f1ddfbf78a41c67c621783196 - Cache
+    opengl/system#b29589c04d6df84c110d6acb066ab653 - Cache
+    opengl-registry/cci.20220929#ade8c44dc6965559f5a1cf35f46c4303 - Cache
+
+======== Computing necessary packages ========
+Requirements
+    freeglut/3.4.0#faa2b8377286ee578be419cbecadd8ab:ed736eed206dc90466f85ab14a5143e88bfcbf63#83b1af2d5f4f72a49cf4e935d0db0556 - Cache
+    glu/system#ee50fc2ade0e1c0c8ebb3be3ea60e0f5:da39a3ee5e6b4b0d3255bfef95601890afd80709#0ba8627bd47edc3a501e8f0eb9a79e5e - Cache
+    khrplatform/cci.20200529#eec32d0f1ddfbf78a41c67c621783196:da39a3ee5e6b4b0d3255bfef95601890afd80709#f6ca34b0055eeb66de8e0cb09c284e44 - Cache
+    opengl-registry/cci.20220929#ade8c44dc6965559f5a1cf35f46c4303:da39a3ee5e6b4b0d3255bfef95601890afd80709#26f580fe059036ad87647726361c788f - Cache
+    opengl/system#b29589c04d6df84c110d6acb066ab653:da39a3ee5e6b4b0d3255bfef95601890afd80709#0ba8627bd47edc3a501e8f0eb9a79e5e - Cache
+
+======== Installing packages ========
+khrplatform/cci.20200529: Already installed! (1 of 5)
+opengl/system: Already installed! (2 of 5)
+glu/system: Already installed! (3 of 5)
+opengl-registry/cci.20220929: Already installed! (4 of 5)
+freeglut/3.4.0: Already installed! (5 of 5)
+WARN: deprecated: Usage of deprecated Conan 1.X features that will be removed in Conan 2.X:
+WARN: deprecated:     'cpp_info.filenames' used in: opengl/system
+WARN: deprecated:     'cpp_info.names' used in: freeglut/3.4.0
+
+======== Finalizing install (deploy, generators) ========
+conanfile.py: Writing generators to C:\Users\jfdg0\Downloads\Telegram Desktop\pr3b_conan\pr3b_conan\cmake-build-debug\conan\build\Debug\generators
+conanfile.py: Generator 'CMakeDeps' calling 'generate()'
+conanfile.py: Calling generate()
+conanfile.py: Generators folder: C:\Users\jfdg0\Downloads\Telegram Desktop\pr3b_conan\pr3b_conan\cmake-build-debug\conan\build\Debug\generators
+conanfile.py: CMakeToolchain generated: conan_toolchain.cmake
+conanfile.py: Preset 'conan-debug' added to CMakePresets.json. Invoke it manually using 'cmake --preset conan-debug' if using CMake>=3.23
+conanfile.py: If your CMake version is not compatible with CMakePresets (<3.23) call cmake like: 'cmake <path> -G Ninja -DCMAKE_TOOLCHAIN_FILE=C:\Users\jfdg0\Downloads\Telegram Desktop\pr3b_conan\pr3b_conan\cmake-build-debug\conan\build\Debug\generators\conan_toolchain.cmake -DCMAKE_POLICY_DEFAULT_CMP0091=NEW -DCMAKE_BUILD_TYPE=Debug'
+conanfile.py: CMakeToolchain generated: CMakePresets.json
+conanfile.py: Generating aggregated env files
+conanfile.py: Generated aggregated env files: ['conanbuild.bat', 'conanrun.bat']
+Install finished successfully
+-- CMake-Conan: CONAN_GENERATORS_FOLDER=C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan/cmake-build-debug/conan/build/Debug/generators
+-- CMake-Conan: CONANFILE=C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan/conanfile.py
+-- Conan: Target declared 'opengl::opengl'
+-- CMake-Conan: find_package(opengl-registry) found, 'conan install' already ran
+-- Conan: Target declared 'opengl-registry::opengl-registry'
+-- CMake-Conan: find_package(khrplatform) found, 'conan install' already ran
+-- Conan: Target declared 'khrplatform::khrplatform'
+-- CMake-Conan: find_package(FreeGLUT) found, 'conan install' already ran
+-- Conan: Component target declared 'FreeGLUT::freeglut_static'
+-- CMake-Conan: find_package(glu) found, 'conan install' already ran
+-- Conan: Target declared 'glu::glu'
+-- Configuring done (11.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan/cmake-build-debug

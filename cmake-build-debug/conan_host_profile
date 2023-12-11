@@ -1,0 +1,11 @@
+[settings]
+arch=x86_64
+os=Windows
+compiler=gcc
+compiler.version=13
+compiler.cppstd=14
+compiler.libcxx=libstdc++11
+build_type=Debug
+[conf]
+tools.cmake.cmaketoolchain:generator=Ninja
+tools.build:compiler_executables={"c":"C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/gcc.exe","cpp":"C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/g++.exe"}

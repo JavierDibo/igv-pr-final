@@ -348,13 +348,13 @@ void igvEscena3D::visualizarBaseGrua() {
 
 void igvEscena3D::visualizarEstructura(int num) {
     GLfloat altura;
-    if (num == 0) {
+    if (num == 0 || num == 3) {
         altura = 2.5;
         glTranslatef(0, altura, 0);
         visualizarMunneco();
         glTranslatef(0, -altura, 0);
     }
-    if (num == 1) {
+    if (num == 1 || num == 4) {
         altura = 0.5;
         glTranslatef(0, altura, 0);
         visualizarBaseGrua();

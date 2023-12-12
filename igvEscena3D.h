@@ -119,7 +119,6 @@ public:
 
     void visualizarCuadrado();
 
-private:
     void pintar_ejes();
 
     void generarBases();
@@ -135,6 +134,30 @@ private:
     void visualizarCable(const float punto_partida[3], const float centro_anterior[3]);
 
     void rotateY(const float *point, float angle, float *result);
+
+    void rotar_izquierda(double scale);
+
+    void reducir_altura_cable();
+
+    void aumentar_altura_cable();
+
+    void reducir_profundidad_cable();
+
+    void aumentar_profundidad_cable();
+
+    void rotar_derecha();
+
+    void rotar_izquierda();
+
+    void aumentar_altura_cable(double scale);
+
+    void reducir_altura_cable(double scale);
+
+    void reducir_profundidad_cable(double scale);
+
+    void aumentar_profundidad_cable(double scale);
+
+    void rotar_derecha(double scale);
 };
 
 #endif   // __IGVESCENA3D

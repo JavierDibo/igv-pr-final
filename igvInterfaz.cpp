@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <stdio.h>
+#include <random>
 
 #include "igvInterfaz.h"
 
@@ -170,12 +171,166 @@ void igvInterfaz::displayFunc() {
     glutSwapBuffers();
 }
 
+enum EstadoAnimacion {
+    ROTANDO_IZQUIERDA,
+    ROTANDO_DERECHA,
+    SUBIR,
+    BAJAR,
+    LEJOS,
+    CERCA
+};
+
+static EstadoAnimacion estado_actual = ROTANDO_IZQUIERDA;
+static int ultimo_tiempo = 0;
+static float tiempo_pasado_en_estado = 0.0f;
+static std::mt19937 random(1234);
+static std::uniform_real_distribution<float> tiempo(0.0f, 5.0f);
+static float tiempo_random = tiempo(random);
 /**
  * Método para animar la escena
  */
-void
-igvInterfaz::idleFunc() {  // TODO: Apartado D: incluir el código para animar el modelo de la manera más realista posible
+void igvInterfaz::idleFunc() {
+    int tiempo_actual = glutGet(GLUT_ELAPSED_TIME);
+    int delta_tiempo = tiempo_actual - ultimo_tiempo;
+
+    // Convert delta time to seconds for easier calculations
+    tiempo_pasado_en_estado += delta_tiempo / 1000.0f;
+
+
+    switch (estado_actual) {
+        case ROTANDO_IZQUIERDA:
+            if (tiempo_pasado_en_estado <= tiempo_random) {
+                _instancia->escena.rotar_izquierda(delta_tiempo / 5000.0f);
+            } else {
+                estado_actual = CERCA;
+                tiempo_pasado_en_estado = 0.0f;
+                tiempo_random = tiempo(random);
+            }
+            break;
+
+        case CERCA:
+            if (tiempo_pasado_en_estado <= tiempo_random) {
+                _instancia->escena.reducir_profundidad_cable(delta_tiempo / 3000.0f);
+            } else {
+                estado_actual = SUBIR;
+                tiempo_pasado_en_estado = 0.0f;
+                tiempo_random = tiempo(random);
+            }
+            break;
+
+        case SUBIR:
+            if (tiempo_pasado_en_estado <= 2.0f) {
+                _instancia->escena.aumentar_altura_cable(delta_tiempo / 2000.0f);
+            } else {
+                estado_actual = ROTANDO_DERECHA;
+                tiempo_pasado_en_estado = 0.0f;
+            }
+            break;
+        case ROTANDO_DERECHA:
+            if (tiempo_pasado_en_estado <= tiempo_random) {
+                _instancia->escena.rotar_derecha(delta_tiempo / 5000.0f);
+            } else {
+                estado_actual = LEJOS;
+                tiempo_pasado_en_estado = 0.0f;
+                tiempo_random = tiempo(random);
+            }
+            break;
+        case LEJOS:
+            if (tiempo_pasado_en_estado <= tiempo_random) {
+                _instancia->escena.aumentar_profundidad_cable(delta_tiempo / 3000.0f);
+            } else {
+                estado_actual = BAJAR;
+                tiempo_pasado_en_estado = 0.0f;
+                tiempo_random = tiempo(random);
+            }
+            break;
+        case BAJAR:
+            if (tiempo_pasado_en_estado <= 2.0f) {
+                _instancia->escena.reducir_altura_cable(delta_tiempo / 2000.0f);
+            } else {
+                estado_actual = ROTANDO_IZQUIERDA;
+                tiempo_pasado_en_estado = 0.0f;
+            }
+            break;
+    }
+
+    ultimo_tiempo = tiempo_actual;
+    glutPostRedisplay();
 }
+
+void igvEscena3D::rotar_izquierda(double scale) {
+    anguloColumna -= ANGULO_MAX * scale;
+}
+
+void igvEscena3D::rotar_derecha(double scale) {
+    anguloColumna += ANGULO_MAX * scale;
+}
+
+void igvEscena3D::aumentar_profundidad_cable(double scale) {
+    if ( (profundidadCable + PROFUNDIDAD_MAX * scale) >= PROFUNDIDAD_MAX)
+        return;
+
+    profundidadCable += PROFUNDIDAD_MAX * scale;
+}
+
+void igvEscena3D::reducir_profundidad_cable(double scale) {
+    if (profundidadCable - PROFUNDIDAD_MAX * scale < 0.3)
+        return;
+
+    profundidadCable -= PROFUNDIDAD_MAX * scale;
+}
+
+void igvEscena3D::aumentar_altura_cable(double scale) {
+    if ( (largoCable + ALTURA_MAX * scale) > ALTURA_MAX)
+        return;
+
+    largoCable += ALTURA_MAX * scale;
+}
+
+void igvEscena3D::reducir_altura_cable(double scale) {
+    if ( (largoCable - ALTURA_MAX * scale) < 0.5)
+        return;
+
+    largoCable -= ALTURA_MAX * scale;
+}
+
+void igvEscena3D::rotar_izquierda() {
+    anguloColumna -= 5;
+}
+
+void igvEscena3D::rotar_derecha() {
+    anguloColumna += 5;
+}
+
+void igvEscena3D::aumentar_profundidad_cable() {
+    if (profundidadCable + 0.2 >= 3.5)
+        return;
+
+    profundidadCable += 0.2;
+}
+
+void igvEscena3D::reducir_profundidad_cable() {
+    if (profundidadCable - 0.2 <= 0)
+        return;
+
+    profundidadCable -= 0.2;
+}
+
+void igvEscena3D::aumentar_altura_cable() {
+    if (largoCable + 0.2 > 3.5)
+        return;
+
+    largoCable += 0.2;
+}
+
+void igvEscena3D::reducir_altura_cable() {
+    if (largoCable - 0.2 < 0)
+        return;
+
+    largoCable -= 0.2;
+}
+
+
 
 /**
  * Método para inicializar los callbacks GLUT

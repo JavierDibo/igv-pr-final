@@ -18,6 +18,9 @@
 #include "igvCamara.h"
 
 #define NUM_POSICIONES_CAMARA 5
+#define PROFUNDIDAD_MAX 3
+#define ALTURA_MAX 3.2
+#define ANGULO_MAX 360
 
 /**
  * Los objetos de esta clase encapsulan la interfaz y el estado de la aplicación

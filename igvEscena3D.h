@@ -11,6 +11,8 @@
 
 #endif // defined(__APPLE__) && defined(__MACH__)
 
+#include <cmath>
+
 /**
  * Partes del modelo
  */
@@ -34,6 +36,9 @@ private:
     int angPiernaD;
     int angBrazoI;
     int angBrazoD;
+    float anguloColumna = 0.0;
+    float profundidadCable = 1;
+    float largoCable = 2;
 
     // Otros atributos
     bool ejes = true;   ///< Indica si hay que dibujar los ejes coordenados o no
@@ -118,6 +123,18 @@ private:
     void pintar_ejes();
 
     void generarBases();
+
+    void visualizarEstructura(int num);
+
+    void visualizarBaseGrua();
+
+    void visualizarColumna(const float *punto_partida, const float *centro_anterior);
+
+    void visualizarBrazo(const float *punto_partida, const float *centro_anterior);
+
+    void visualizarCable(const float punto_partida[3], const float centro_anterior[3]);
+
+    void rotateY(const float *point, float angle, float *result);
 };
 
 #endif   // __IGVESCENA3D

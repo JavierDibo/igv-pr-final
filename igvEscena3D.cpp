@@ -213,6 +213,155 @@ void igvEscena3D::rotarBrazoI(int ang) {
     glRotatef(ang, 1, 0, 0);
 }
 
+void igvEscena3D::visualizarCable(const float punto_partida[3], const float centro_anterior[3]) {
+    float s1 = 0.05, s2 = largoCable, s3 = 0.05;
+    float t1 = punto_partida[0], t2 = punto_partida[1] - 0.20f, t3 = punto_partida[2] - s3 / 2 - profundidadCable;
+
+    glPushMatrix();
+
+    glRotated(anguloColumna, 0.0, 1.0, 0.0);
+
+    glTranslatef(t1, t2, t3);
+
+    // Mover al centro y escalarlo
+    glScalef(s1, -s2, s3);
+    glTranslatef(0, 0.5, 0);
+
+    // glutWireCube(1.0);
+    glutSolidCube(1.0);
+
+    glPopMatrix();
+
+}
+
+void igvEscena3D::rotateY(const float point[3], float angle, float result[3]) {
+    float rad = angle * M_PI / 180.0; // Convertir el ?ngulo a radianes
+    result[0] = cos(rad) * point[0] - sin(rad) * point[2];
+    result[1] = point[1];
+    result[2] = sin(rad) * point[0] + cos(rad) * point[2];
+}
+
+void igvEscena3D::visualizarBrazo(const float punto_partida[3], const float centro_anterior[3]) {
+
+    float s1 = 0.40, s2 = 0.40, s3 = 5.00;
+    float t1 = punto_partida[0], t2 = punto_partida[1], t3 = punto_partida[2] + s3 / 2 - 0.20f;
+
+    glPushMatrix();
+
+    glRotated(anguloColumna, 0.0, 1.0, 0.0);
+
+    glTranslatef(t1, t2, t3);
+
+    // Mover al centro y escalarlo
+    glScalef(s1, s2, s3);
+    glTranslatef(0, 0.5, 0);
+
+    // glutWireCube(1.0);
+    glutSolidCube(1.0);
+
+    glPopMatrix();
+
+    float centroX = centro_anterior[0] * s1 + t1;
+    float centroY = (centro_anterior[0] + 0.5f) * s2 + t2;
+    float centroZ = centro_anterior[0] * s3 + t3;
+
+    float centro[3] = {centroX, centroY, centroZ};
+
+    float centro_cara_superior_x = centroX;
+    float centro_cara_superior_y = centroY;
+    float centro_cara_superior_z = centroZ + s3 / 2;
+
+    // Coordenadas del centro de la cara superior del cubo
+    float centro_cara_superior[3] = {centro_cara_superior_x, centro_cara_superior_y, centro_cara_superior_z};
+
+    visualizarCable(centro_cara_superior, centro);
+}
+
+void igvEscena3D::visualizarColumna(const float punto_partida[3], const float centro_anterior[3]) {
+
+    float s1 = 0.40, s2 = 3.00, s3 = 0.40;
+    float t1 = punto_partida[0], t2 = punto_partida[1], t3 = punto_partida[2];
+
+    glPushMatrix();
+
+    glRotated(anguloColumna, 0.0, 1.0, 0.0);
+
+    glTranslatef(t1, t2, t3);
+
+    // Mover al centro y escalarlo
+    glScalef(s1, s2, s3);
+    glTranslatef(0, 0.5, 0);
+
+    // glutWireCube(1.0);
+    glutSolidCube(1.0);
+
+    glPopMatrix();
+
+    float centro_rotado[3];
+    rotateY(centro_anterior, anguloColumna, centro_rotado);
+
+    float centroX = centro_rotado[0] * s1 + t1;
+    float centroY = (centro_rotado[0] + 0.5f) * s2 + t2;
+    float centroZ = centro_rotado[0] * s3 + t3;
+
+    float centro[3] = {centroX, centroY, centroZ};
+
+    float centro_cara_superior_x = centroX;
+    float centro_cara_superior_y = centroY + s2 / 2;
+    float centro_cara_superior_z = centroZ;
+
+    // Coordenadas del centro de la cara superior del cubo
+    float centro_cara_superior[3] = {centro_cara_superior_x, centro_cara_superior_y, centro_cara_superior_z};
+
+    visualizarBrazo(centro_cara_superior, centro);
+}
+
+void igvEscena3D::visualizarBaseGrua() {
+
+    float s1 = 1.00, s2 = 0.50, s3 = 1.00;
+    float t1 = 0.00, t2 = s2 / 2, t3 = 0.00;
+
+    glPushMatrix();
+
+    glTranslatef(t1, t2, t3);
+    glScalef(s1, s2, s3);
+
+    glutSolidCube(1.0);
+
+    glPopMatrix();
+
+    float centroX = 0.0f * s1 + t1;
+    float centroY = 0.0f * s2 + t2;
+    float centroZ = 0.0f * s3 + t3;
+
+    float centro[3] = {centroX, centroY, centroZ};
+
+    float centro_cara_superior_x = centroX;
+    float centro_cara_superior_y = centroY + s2 / 2;
+    float centro_cara_superior_z = centroZ;
+
+    // Coordenadas del centro de la cara superior del cubo
+    float cara_superior[3] = {centro_cara_superior_x, centro_cara_superior_y, centro_cara_superior_z};
+
+    visualizarColumna(cara_superior, centro);
+}
+
+void igvEscena3D::visualizarEstructura(int num) {
+    GLfloat altura;
+    if (num == 0) {
+        altura = 2.5;
+        glTranslatef(0, altura, 0);
+        visualizarMunneco();
+        glTranslatef(0, -altura, 0);
+    }
+    if (num == 1) {
+        altura = 0.5;
+        glTranslatef(0, altura, 0);
+        visualizarBaseGrua();
+        glTranslatef(0, -altura, 0);
+    }
+}
+
 void igvEscena3D::generarBases() {
 
     for (int i = 0; i < 5; ++i) {
@@ -221,8 +370,7 @@ void igvEscena3D::generarBases() {
         glRotatef(27 * i, 0, 1, 0);
         visualizarBase();
         glPushMatrix();
-        glTranslatef(0,2.5,0);
-        visualizarMunneco();
+        visualizarEstructura(i);
         glPopMatrix();
         glPopMatrix();
     }

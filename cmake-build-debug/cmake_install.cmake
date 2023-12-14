@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan
+# Install script for directory: C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

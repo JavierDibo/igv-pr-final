@@ -41,7 +41,8 @@ private:
 
     int cont = 1;
 
-    int posicion_camara;
+    int posicion_camara = 0;
+    int posicion_luz = 0;
 
 public:
     // Aplicación del patrón de diseño Singleton
@@ -87,6 +88,8 @@ public:
     void setCont(int cont);
 
     void mover_camara();
+
+    void mover_luz();
 };
 
 #endif   // __IGVINTERFAZ

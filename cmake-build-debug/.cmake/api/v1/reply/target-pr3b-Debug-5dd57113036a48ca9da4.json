@@ -176,7 +176,7 @@
 			[
 				{
 					"backtrace" : 20,
-					"path" : "C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan/."
+					"path" : "C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/."
 				},
 				{
 					"backtrace" : 21,
@@ -348,7 +348,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "pr3b.cpp",
+			"path" : "main.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

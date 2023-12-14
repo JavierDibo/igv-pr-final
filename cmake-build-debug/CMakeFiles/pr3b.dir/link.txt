@@ -1,0 +1,3 @@
+C:\Users\jfdg0\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E rm -f CMakeFiles\pr3b.dir/objects.a
+C:\Users\jfdg0\AppData\Local\Programs\CLion\bin\mingw\bin\ar.exe qc CMakeFiles\pr3b.dir/objects.a @CMakeFiles\pr3b.dir\objects1.rsp
+C:\Users\jfdg0\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\pr3b.dir/objects.a -Wl,--no-whole-archive -o pr3b.exe -Wl,--out-implib,libpr3b.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\pr3b.dir\linkLibs.rsp

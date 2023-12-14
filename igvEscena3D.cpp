@@ -376,18 +376,71 @@ void igvEscena3D::generarBases() {
     }
 }
 
-void igvEscena3D::visualizar() {  // crear luces
-    GLfloat luz0[4] = {5.0, 5.0, 5.0, 1}; // luz puntual
-    glLightfv(GL_LIGHT0, GL_POSITION, luz0); // la luz se coloca aquí si permanece fija y no se mueve con la escena
-    glEnable(GL_LIGHT0);
+void igvEscena3D::visualizar(int pos) {  // crear luces
+    // Crear luces
+    GLfloat luz0[4] = {5.0, 5.0, 5.0, 1}; // Posición de la luz puntual
+
+    // Inicializa colores de luz por defecto
+    GLfloat colorAmbiente[4] = {0.2, 0.2, 0.2, 1}; // Color de la luz ambiente por defecto
+    GLfloat colorDifuso[4] = {1.0, 1.0, 1.0, 1}; // Color de la luz difusa por defecto
+    GLfloat colorEspecular[4] = {1.0, 1.0, 1.0, 1}; // Color de la luz especular por defecto
+
+    // Cambia el color de la luz según la habitación
+    switch (pos) {
+        case 1:
+            colorDifuso[0] = 0.0; // Rojo
+            colorDifuso[1] = 1.0; // Verde
+            colorDifuso[2] = 1.0; // Azul
+            luz0[0] = 0;
+            luz0[1] = 0;
+            luz0[2] = 0;
+            break;
+        case 2:
+            colorDifuso[0] = 1.0;
+            colorDifuso[1] = 0.0;
+            colorDifuso[2] = 0.0;
+            luz0[0] = 5;
+            luz0[1] = -5;
+            luz0[2] = 0;
+            break;
+        case 3:
+            colorDifuso[0] = 1.0;
+            colorDifuso[1] = 1.0;
+            colorDifuso[2] = 0.0;
+            luz0[0] = 30;
+            luz0[1] = 5;
+            luz0[2] = 5;
+            break;
+        case 4: // Verde claro
+            colorDifuso[0] = 1.0;
+            colorDifuso[1] = 0.0;
+            colorDifuso[2] = 1.0;
+            luz0[0] = 0;
+            luz0[1] = 5;
+            luz0[2] = 0;
+            break;
+        default:
+            colorDifuso[0] = 1.0;
+            colorDifuso[1] = 1.0;
+            colorDifuso[2] = 1.0;
+            luz0[0] = 5;
+            luz0[1] = 5;
+            luz0[2] = 5;
+            break;
+    }
+
+    glLightfv(GL_LIGHT0, GL_POSITION, luz0); // Configura la posición de la luz
+    glLightfv(GL_LIGHT0, GL_AMBIENT, colorAmbiente); // Configura el color de la luz ambiente
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, colorDifuso); // Configura el color de la luz difusa
+    glLightfv(GL_LIGHT0, GL_SPECULAR, colorEspecular); // Configura el color de la luz especular
+
+    glEnable(GL_LIGHT0); // Habilita la luz 0
 
     // crear el modelo
     glPushMatrix(); // guarda la matriz de modelado
 
     // se pintan los ejes
     if (ejes) { pintar_ejes(); }
-
-    //glLightfv(GL_LIGHT0,GL_POSITION,luz0); // la luz se coloca aquí si se mueve junto con la escena (también habría que desactivar la de arriba).
 
     generarBases();
 
@@ -399,7 +452,7 @@ void igvEscena3D::visualizar() {  // crear luces
  * @retval true Si hay que dibujar los ejes
  * @retval false Si no hay que dibujar los ejes
  */
-bool igvEscena3D::get_ejes() {
+bool igvEscena3D::get_ejes() const {
     return ejes;
 }
 

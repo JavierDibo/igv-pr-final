@@ -1,4 +1,4 @@
-C:\Users\jfdg0\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/ninja/win/x64/ninja.exe -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=conan_provider.cmake -G Ninja -S "C:\Users\jfdg0\Downloads\Telegram Desktop\pr3b_conan\pr3b_conan" -B "C:\Users\jfdg0\Downloads\Telegram Desktop\pr3b_conan\pr3b_conan\cmake-build-debug"
+C:\Users\jfdg0\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=conan_provider.cmake -G "CodeBlocks - MinGW Makefiles" -S "C:\Users\jfdg0\Desktop\Informatica Grafica y Visual\igv-pr-final" -B "C:\Users\jfdg0\Desktop\Informatica Grafica y Visual\igv-pr-final\cmake-build-debug"
 -- CMake-Conan: first find_package() found. Installing dependencies with Conan
 -- CMake-Conan: Checking if a default profile exists
 C:\Users\jfdg0\.conan2\profiles\default
@@ -8,7 +8,7 @@ C:\Users\jfdg0\.conan2\profiles\default
 -- CMake-Conan: CMake compiler version=13.1.0
 -- CMake-Conan: [settings] compiler=gcc
 -- CMake-Conan: [settings] compiler.version=13
--- CMake-Conan: Creating profile C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan/cmake-build-debug/conan_host_profile
+-- CMake-Conan: Creating profile C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan_host_profile
 -- CMake-Conan: Profile: 
 [settings]
 arch=x86_64
@@ -19,11 +19,11 @@ compiler.cppstd=14
 compiler.libcxx=libstdc++11
 build_type=Debug
 [conf]
-tools.cmake.cmaketoolchain:generator=Ninja
+tools.cmake.cmaketoolchain:generator=MinGW Makefiles
 tools.build:compiler_executables={"c":"C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/gcc.exe","cpp":"C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/g++.exe"}
 
 -- CMake-Conan: Installing single configuration Debug
--- CMake-Conan: conan install C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan -of=C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan/cmake-build-debug/conan --profile:host=default;--profile:host=C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan/cmake-build-debug/conan_host_profile;--profile:build=default;--build=missing
+-- CMake-Conan: conan install C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final -of=C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan --profile:host=default;--profile:host=C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan_host_profile;--profile:build=default;--build=missing
 
 ======== Input profiles ========
 Profile host:
@@ -36,7 +36,7 @@ compiler.libcxx=libstdc++11
 compiler.version=13
 os=Windows
 [conf]
-tools.cmake.cmaketoolchain:generator=Ninja
+tools.cmake.cmaketoolchain:generator=MinGW Makefiles
 tools.build:compiler_executables={'c': 'C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/gcc.exe', 'cpp': 'C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/g++.exe'}
 
 Profile build:
@@ -52,7 +52,7 @@ os=Windows
 
 ======== Computing dependency graph ========
 Graph root
-    conanfile.py: C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan\conanfile.py
+    conanfile.py: C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final\conanfile.py
 Requirements
     freeglut/3.4.0#faa2b8377286ee578be419cbecadd8ab - Cache
     glu/system#ee50fc2ade0e1c0c8ebb3be3ea60e0f5 - Cache
@@ -79,19 +79,19 @@ WARN: deprecated:     'cpp_info.filenames' used in: opengl/system
 WARN: deprecated:     'cpp_info.names' used in: freeglut/3.4.0
 
 ======== Finalizing install (deploy, generators) ========
-conanfile.py: Writing generators to C:\Users\jfdg0\Downloads\Telegram Desktop\pr3b_conan\pr3b_conan\cmake-build-debug\conan\build\Debug\generators
+conanfile.py: Writing generators to C:\Users\jfdg0\Desktop\Informatica Grafica y Visual\igv-pr-final\cmake-build-debug\conan\build\Debug\generators
 conanfile.py: Generator 'CMakeDeps' calling 'generate()'
 conanfile.py: Calling generate()
-conanfile.py: Generators folder: C:\Users\jfdg0\Downloads\Telegram Desktop\pr3b_conan\pr3b_conan\cmake-build-debug\conan\build\Debug\generators
+conanfile.py: Generators folder: C:\Users\jfdg0\Desktop\Informatica Grafica y Visual\igv-pr-final\cmake-build-debug\conan\build\Debug\generators
 conanfile.py: CMakeToolchain generated: conan_toolchain.cmake
 conanfile.py: Preset 'conan-debug' added to CMakePresets.json. Invoke it manually using 'cmake --preset conan-debug' if using CMake>=3.23
-conanfile.py: If your CMake version is not compatible with CMakePresets (<3.23) call cmake like: 'cmake <path> -G Ninja -DCMAKE_TOOLCHAIN_FILE=C:\Users\jfdg0\Downloads\Telegram Desktop\pr3b_conan\pr3b_conan\cmake-build-debug\conan\build\Debug\generators\conan_toolchain.cmake -DCMAKE_POLICY_DEFAULT_CMP0091=NEW -DCMAKE_BUILD_TYPE=Debug'
+conanfile.py: If your CMake version is not compatible with CMakePresets (<3.23) call cmake like: 'cmake <path> -G "MinGW Makefiles" -DCMAKE_TOOLCHAIN_FILE=C:\Users\jfdg0\Desktop\Informatica Grafica y Visual\igv-pr-final\cmake-build-debug\conan\build\Debug\generators\conan_toolchain.cmake -DCMAKE_SH=CMAKE_SH-NOTFOUND -DCMAKE_POLICY_DEFAULT_CMP0091=NEW -DCMAKE_BUILD_TYPE=Debug'
 conanfile.py: CMakeToolchain generated: CMakePresets.json
 conanfile.py: Generating aggregated env files
 conanfile.py: Generated aggregated env files: ['conanbuild.bat', 'conanrun.bat']
 Install finished successfully
--- CMake-Conan: CONAN_GENERATORS_FOLDER=C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan/cmake-build-debug/conan/build/Debug/generators
--- CMake-Conan: CONANFILE=C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan/conanfile.py
+-- CMake-Conan: CONAN_GENERATORS_FOLDER=C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators
+-- CMake-Conan: CONANFILE=C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/conanfile.py
 -- Conan: Target declared 'opengl::opengl'
 -- CMake-Conan: find_package(opengl-registry) found, 'conan install' already ran
 -- Conan: Target declared 'opengl-registry::opengl-registry'
@@ -101,6 +101,6 @@ Install finished successfully
 -- Conan: Component target declared 'FreeGLUT::freeglut_static'
 -- CMake-Conan: find_package(glu) found, 'conan install' already ran
 -- Conan: Target declared 'glu::glu'
--- Configuring done (1.6s)
--- Generating done (0.0s)
--- Build files have been written to: C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan/cmake-build-debug
+-- Configuring done (2.9s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug

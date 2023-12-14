@@ -52,6 +52,21 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
+			"path" : "C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeFindCodeBlocks.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/ProcessorCount.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
 			"path" : "C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake"
 		},
 		{
@@ -310,8 +325,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan/cmake-build-debug",
-		"source" : "C:/Users/jfdg0/Downloads/Telegram Desktop/pr3b_conan/pr3b_conan"
+		"build" : "C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug",
+		"source" : "C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final"
 	},
 	"version" : 
 	{

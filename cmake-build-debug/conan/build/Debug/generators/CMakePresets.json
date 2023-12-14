@@ -12,14 +12,15 @@
         {
             "name": "conan-debug",
             "displayName": "'conan-debug' config",
-            "description": "'conan-debug' configure using 'Ninja' generator",
-            "generator": "Ninja",
+            "description": "'conan-debug' configure using 'MinGW Makefiles' generator",
+            "generator": "MinGW Makefiles",
             "cacheVariables": {
+                "CMAKE_SH": "CMAKE_SH-NOTFOUND",
                 "CMAKE_POLICY_DEFAULT_CMP0091": "NEW",
                 "CMAKE_BUILD_TYPE": "Debug"
             },
-            "toolchainFile": "C:\\Users\\jfdg0\\Downloads\\Telegram Desktop\\pr3b_conan\\pr3b_conan\\cmake-build-debug\\conan\\build\\Debug\\generators\\conan_toolchain.cmake",
-            "binaryDir": "C:\\Users\\jfdg0\\Downloads\\Telegram Desktop\\pr3b_conan\\pr3b_conan\\cmake-build-debug\\conan\\build\\Debug"
+            "toolchainFile": "C:\\Users\\jfdg0\\Desktop\\Informatica Grafica y Visual\\igv-pr-final\\cmake-build-debug\\conan\\build\\Debug\\generators\\conan_toolchain.cmake",
+            "binaryDir": "C:\\Users\\jfdg0\\Desktop\\Informatica Grafica y Visual\\igv-pr-final\\cmake-build-debug\\conan\\build\\Debug"
         }
     ],
     "buildPresets": [

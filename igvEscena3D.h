@@ -51,7 +51,7 @@ public:
     ~igvEscena3D();
 
     // método con las llamadas OpenGL para visualizar la escena
-    void visualizar();
+    void visualizar(int pos);
 
     // TODO: Apartado B: Métodos para visualizar cada parte del modelo
 
@@ -111,7 +111,7 @@ public:
 
     void setAngBrazoD(int angBrazoD);
 
-    bool get_ejes();
+    bool get_ejes() const;
 
     void set_ejes(bool _ejes);
 

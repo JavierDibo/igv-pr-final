@@ -87,11 +87,19 @@ void igvInterfaz::mover_camara() {
                            200);
 }
 
+void igvInterfaz::mover_luz() {
+    _instancia->posicion_luz = (_instancia->posicion_luz + 1) % NUM_POSICIONES_CAMARA;
+}
+
+
 void igvInterfaz::keyboardFunc(unsigned char key, int x, int y) {
 
     switch (key) {
         case 'r':
             _instancia->mover_camara();
+            break;
+        case 'l':
+            _instancia->mover_luz();
             break;
         case 'z':
             _instancia->camara.zoom(-2);
@@ -165,7 +173,7 @@ void igvInterfaz::displayFunc() {
     // aplica las transformaciones en función de los parámetros de la cámara
     _instancia->camara.aplicar();
     // visualiza la escena
-    _instancia->escena.visualizar();
+    _instancia->escena.visualizar(_instancia->posicion_luz);
 
     // refresca la ventana
     glutSwapBuffers();

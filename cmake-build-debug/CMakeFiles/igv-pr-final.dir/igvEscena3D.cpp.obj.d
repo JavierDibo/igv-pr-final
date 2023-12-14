@@ -1,4 +1,4 @@
-CMakeFiles/pr3b.dir/igvEscena3D.cpp.obj: \
+CMakeFiles/igv-pr-final.dir/igvEscena3D.cpp.obj: \
  C:\Users\jfdg0\Desktop\Informatica\ Grafica\ y\ Visual\igv-pr-final\igvEscena3D.cpp \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdlib \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \

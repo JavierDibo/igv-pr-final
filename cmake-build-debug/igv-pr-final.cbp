@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="igv-pr-final"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake-build-debug\;CMake Files\cmake-build-debug\conan\;CMake Files\cmake-build-debug\conan\build\;CMake Files\cmake-build-debug\conan\build\Debug\;CMake Files\cmake-build-debug\conan\build\Debug\generators\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="igv-pr-final">
+				<Option output="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/igv-pr-final.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DFREEGLUT_STATIC=1"/>
+					<Add option="-DFREEGLUT_LIB_PRAGMAS=0"/>
+					<Add directory="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/."/>
+					<Add directory="C:/Users/jfdg0/.conan2/p/opengd9728560ae872/p/include"/>
+					<Add directory="C:/Users/jfdg0/.conan2/p/khrplf8ad437cff9db/p/include"/>
+					<Add directory="C:/Users/jfdg0/.conan2/p/b/freegce335745f9483/p/include"/>
+					<Add directory="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="/mingw/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 igv-pr-final"/>
+					<CompileFile command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="igv-pr-final/fast">
+				<Option output="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/igv-pr-final.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DFREEGLUT_STATIC=1"/>
+					<Add option="-DFREEGLUT_LIB_PRAGMAS=0"/>
+					<Add directory="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/."/>
+					<Add directory="C:/Users/jfdg0/.conan2/p/opengd9728560ae872/p/include"/>
+					<Add directory="C:/Users/jfdg0/.conan2/p/khrplf8ad437cff9db/p/include"/>
+					<Add directory="C:/Users/jfdg0/.conan2/p/b/freegce335745f9483/p/include"/>
+					<Add directory="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="/mingw/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 igv-pr-final/fast"/>
+					<CompileFile command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/igvCamara.cpp">
+			<Option target="igv-pr-final"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/igvCamara.h">
+			<Option target="igv-pr-final"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/igvEscena3D.cpp">
+			<Option target="igv-pr-final"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/igvEscena3D.h">
+			<Option target="igv-pr-final"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/igvInterfaz.cpp">
+			<Option target="igv-pr-final"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/igvInterfaz.h">
+			<Option target="igv-pr-final"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/igvPunto3D.cpp">
+			<Option target="igv-pr-final"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/igvPunto3D.h">
+			<Option target="igv-pr-final"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/main.cpp">
+			<Option target="igv-pr-final"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/conan_provider.cmake">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/conanfile.py">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/FreeGLUT-Target-debug.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/FreeGLUT-debug-x86_64-data.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/FreeGLUTConfig.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/FreeGLUTConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/FreeGLUTTargets.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/cmakedeps_macros.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/glu-Target-debug.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/glu-config-version.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/glu-config.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/glu-debug-x86_64-data.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/gluTargets.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/khrplatform-Target-debug.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/khrplatform-config-version.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/khrplatform-config.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/khrplatform-debug-x86_64-data.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/khrplatformTargets.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/opengl-registry-Target-debug.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/opengl-registry-config-version.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/opengl-registry-config.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/opengl-registry-debug-x86_64-data.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/opengl-registryTargets.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/opengl_system-Target-debug.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/opengl_system-config-version.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/opengl_system-config.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/opengl_system-debug-x86_64-data.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+		<Unit filename="C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators/opengl_systemTargets.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\conan\build\Debug\generators\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

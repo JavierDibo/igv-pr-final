@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "pr3b.exe"
+			"path" : "igv-pr-final.exe"
 		},
 		{
-			"path" : "pr3b.pdb"
+			"path" : "igv-pr-final.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -213,7 +213,7 @@
 			]
 		}
 	],
-	"id" : "pr3b::@6890427a1f51a3e7e1df",
+	"id" : "igv-pr-final::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -268,8 +268,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "pr3b",
-	"nameOnDisk" : "pr3b.exe",
+	"name" : "igv-pr-final",
+	"nameOnDisk" : "igv-pr-final.exe",
 	"paths" : 
 	{
 		"build" : ".",

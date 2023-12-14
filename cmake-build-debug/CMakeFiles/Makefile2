@@ -62,7 +62,7 @@ CMAKE_BINARY_DIR = "C:\Users\jfdg0\Desktop\Informatica Grafica y Visual\igv-pr-f
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/pr3b.dir/all
+all: CMakeFiles/igv-pr-final.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -70,34 +70,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/pr3b.dir/clean
+clean: CMakeFiles/igv-pr-final.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/pr3b.dir
+# Target rules for target CMakeFiles/igv-pr-final.dir
 
 # All Build rule for target.
-CMakeFiles/pr3b.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pr3b.dir\build.make CMakeFiles/pr3b.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pr3b.dir\build.make CMakeFiles/pr3b.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\jfdg0\Desktop\Informatica Grafica y Visual\igv-pr-final\cmake-build-debug\CMakeFiles" --progress-num=1,2,3,4,5,6 "Built target pr3b"
-.PHONY : CMakeFiles/pr3b.dir/all
+CMakeFiles/igv-pr-final.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\igv-pr-final.dir\build.make CMakeFiles/igv-pr-final.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\igv-pr-final.dir\build.make CMakeFiles/igv-pr-final.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\jfdg0\Desktop\Informatica Grafica y Visual\igv-pr-final\cmake-build-debug\CMakeFiles" --progress-num=1,2,3,4,5,6 "Built target igv-pr-final"
+.PHONY : CMakeFiles/igv-pr-final.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/pr3b.dir/rule: cmake_check_build_system
+CMakeFiles/igv-pr-final.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\jfdg0\Desktop\Informatica Grafica y Visual\igv-pr-final\cmake-build-debug\CMakeFiles" 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/pr3b.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/igv-pr-final.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\jfdg0\Desktop\Informatica Grafica y Visual\igv-pr-final\cmake-build-debug\CMakeFiles" 0
-.PHONY : CMakeFiles/pr3b.dir/rule
+.PHONY : CMakeFiles/igv-pr-final.dir/rule
 
 # Convenience name for target.
-pr3b: CMakeFiles/pr3b.dir/rule
-.PHONY : pr3b
+igv-pr-final: CMakeFiles/igv-pr-final.dir/rule
+.PHONY : igv-pr-final
 
 # clean rule for target.
-CMakeFiles/pr3b.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pr3b.dir\build.make CMakeFiles/pr3b.dir/clean
-.PHONY : CMakeFiles/pr3b.dir/clean
+CMakeFiles/igv-pr-final.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\igv-pr-final.dir\build.make CMakeFiles/igv-pr-final.dir/clean
+.PHONY : CMakeFiles/igv-pr-final.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

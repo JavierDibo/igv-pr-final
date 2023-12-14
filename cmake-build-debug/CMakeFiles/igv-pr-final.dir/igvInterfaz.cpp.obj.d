@@ -1,5 +1,5 @@
-CMakeFiles/pr3b.dir/pr3b.cpp.obj: \
- C:\Users\jfdg0\Desktop\Informatica\ Grafica\ y\ Visual\igv-pr-final\pr3b.cpp \
+CMakeFiles/igv-pr-final.dir/igvInterfaz.cpp.obj: \
+ C:\Users\jfdg0\Desktop\Informatica\ Grafica\ y\ Visual\igv-pr-final\igvInterfaz.cpp \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdlib \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
@@ -22,6 +22,96 @@ CMakeFiles/pr3b.dir/pr3b.cpp.obj: \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mm_malloc.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/errno.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_abs.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/stdio.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/_mingw_off_t.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/swprintf.inl \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/random \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cmath \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cpp_type_traits.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/type_traits.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/math.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stringfwd.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/memoryfwd.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/char_traits.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/postypes.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cwchar \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/wchar.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/_mingw_stat64.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/type_traits \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/allocator.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++allocator.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/new_allocator.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/new \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/exception.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/functexcept.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/exception_defines.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/move.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/localefwd.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++locale.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/clocale \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/locale.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iosfwd \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cctype \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/ctype.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream_insert.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cxxabi_forced.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_iterator_base_funcs.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/concept_check.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/assertions.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_iterator_base_types.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_iterator.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ptr_traits.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_function.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward/binders.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/numeric_traits.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algobase.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_pair.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/utility.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/debug.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/predefined_ops.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bit \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/refwrap.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/invoke.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/range_access.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/initializer_list \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_string.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/alloc_traits.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/alloc_traits.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_construct.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/string_conversions.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdio \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cerrno \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/charconv.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/functional_hash.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hash_bytes.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_string.tcc \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/limits \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdint \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/stdint.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stddef.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/stddef.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/random.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_uninitialized.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uniform_int_dist.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/opt_random.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/pmmintrin.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/emmintrin.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/xmmintrin.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mmintrin.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mwaitintrin.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/random.tcc \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/numeric \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_numeric.h \
  C:\Users\jfdg0\Desktop\Informatica\ Grafica\ y\ Visual\igv-pr-final\igvInterfaz.h \
  C:/Users/jfdg0/.conan2/p/b/freegce335745f9483/p/include/GL/glut.h \
  C:/Users/jfdg0/.conan2/p/b/freegce335745f9483/p/include/GL/freeglut_std.h \
@@ -40,7 +130,6 @@ CMakeFiles/pr3b.dir/pr3b.cpp.obj: \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/driverspecs.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/winnt.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/_mingw_unicode.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/ctype.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/apiset.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/psdk_inc/intrin-impl.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/basetsd.h \
@@ -50,8 +139,6 @@ CMakeFiles/pr3b.dir/pr3b.cpp.obj: \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/x86intrin.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/x86gprintrin.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/ia32intrin.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stddef.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/stddef.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/adxintrin.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/bmiintrin.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/bmi2intrin.h \
@@ -66,7 +153,6 @@ CMakeFiles/pr3b.dir/pr3b.cpp.obj: \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/lzcntintrin.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/lwpintrin.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/movdirintrin.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mwaitintrin.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mwaitxintrin.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/pconfigintrin.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/popcntintrin.h \
@@ -89,10 +175,6 @@ CMakeFiles/pr3b.dir/pr3b.cpp.obj: \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/xtestintrin.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/hresetintrin.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/immintrin.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mmintrin.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/xmmintrin.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/emmintrin.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/pmmintrin.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/tmmintrin.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/smmintrin.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/wmmintrin.h \
@@ -211,70 +293,6 @@ CMakeFiles/pr3b.dir/pr3b.cpp.obj: \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/imm.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/GL/gl.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/GL/glu.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stringfwd.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/memoryfwd.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/char_traits.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/postypes.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cwchar \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/wchar.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/_mingw_off_t.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/_mingw_stat64.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/swprintf.inl \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/type_traits \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/allocator.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++allocator.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/new_allocator.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/new \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/exception.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/functexcept.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/exception_defines.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/move.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cpp_type_traits.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/localefwd.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++locale.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/clocale \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/locale.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/stdio.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iosfwd \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cctype \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream_insert.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cxxabi_forced.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_iterator_base_funcs.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/concept_check.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/assertions.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_iterator_base_types.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_iterator.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/type_traits.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ptr_traits.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_function.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward/binders.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/numeric_traits.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algobase.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_pair.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/utility.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/debug.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/predefined_ops.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bit \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/refwrap.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/invoke.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/range_access.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/initializer_list \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_string.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/alloc_traits.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/alloc_traits.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_construct.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/string_conversions.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdio \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cerrno \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/charconv.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/functional_hash.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hash_bytes.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_string.tcc \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \
@@ -320,13 +338,6 @@ CMakeFiles/pr3b.dir/pr3b.cpp.obj: \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_uninitialized.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
  C:\Users\jfdg0\Desktop\Informatica\ Grafica\ y\ Visual\igv-pr-final\igvEscena3D.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cmath \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/math.h \
  C:\Users\jfdg0\Desktop\Informatica\ Grafica\ y\ Visual\igv-pr-final\igvCamara.h \
  C:\Users\jfdg0\Desktop\Informatica\ Grafica\ y\ Visual\igv-pr-final\igvPunto3D.h

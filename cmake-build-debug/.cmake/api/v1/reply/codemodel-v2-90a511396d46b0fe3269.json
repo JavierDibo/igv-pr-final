@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "pr3b",
+					"name" : "igv-pr-final",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "pr3b::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-pr3b-Debug-5dd57113036a48ca9da4.json",
-					"name" : "pr3b",
+					"id" : "igv-pr-final::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-igv-pr-final-Debug-366081f5e246e4d0dfb1.json",
+					"name" : "igv-pr-final",
 					"projectIndex" : 0
 				}
 			]

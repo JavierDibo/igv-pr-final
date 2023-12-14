@@ -947,7 +947,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "pr3b"
+			"value" : "igv-pr-final"
 		},
 		{
 			"name" : "CMAKE_PROJECT_TOP_LEVEL_INCLUDES",
@@ -1432,6 +1432,42 @@
 			],
 			"type" : "PATH",
 			"value" : "C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug/conan/build/Debug/generators"
+		},
+		{
+			"name" : "igv-pr-final_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug"
+		},
+		{
+			"name" : "igv-pr-final_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "igv-pr-final_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final"
 		},
 		{
 			"name" : "khrplatform_DIR",

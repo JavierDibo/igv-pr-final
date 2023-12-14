@@ -101,6 +101,6 @@ Install finished successfully
 -- Conan: Component target declared 'FreeGLUT::freeglut_static'
 -- CMake-Conan: find_package(glu) found, 'conan install' already ran
 -- Conan: Target declared 'glu::glu'
--- Configuring done (2.9s)
+-- Configuring done (2.2s)
 -- Generating done (0.1s)
 -- Build files have been written to: C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/cmake-build-debug

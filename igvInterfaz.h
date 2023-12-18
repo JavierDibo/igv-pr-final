@@ -94,7 +94,7 @@ public:
 
     void mover_camara();
 
-    void mover_luz(int num_pasos);
+    void camara_D();
 
     static void menuHandle(int value);
 

@@ -291,7 +291,7 @@ void igvEscena3D::visualizarColumna(const float punto_partida[3], const float ce
     visualizarBrazo(centro_cara_superior, centro);
 }
 
-void igvEscena3D::visualizarBaseGrua() {
+void igvEscena3D::visualizarGrua() {
 
     float s1 = 1.00, s2 = 0.50, s3 = 1.00;
     float t1 = 0.00, t2 = s2 / 2, t3 = 0.00;
@@ -332,7 +332,7 @@ void igvEscena3D::visualizarEstructura(int num) {
     if (num == 1 || num == 4) {
         altura = 0.5;
         glTranslatef(0, altura, 0);
-        visualizarBaseGrua();
+        visualizarGrua();
         glTranslatef(0, -altura, 0);
     }
 }
@@ -409,11 +409,11 @@ void igvEscena3D::generarBases() {
     for (int i = 0; i < 5; ++i) {
         glPushMatrix();
 
-        visualizarBase();
-
         glMaterialfv(GL_FRONT, GL_EMISSION, negro);
         glTranslatef(0, 0, 3 * i);
         glRotatef(27 * i, 0, 1, 0);
+
+        visualizarBase();
 
         glPushMatrix();
 
@@ -426,13 +426,26 @@ void igvEscena3D::generarBases() {
 }
 
 void igvEscena3D::pintar_quad() {
+    // Primer polígono (gradiente de verde a azul)
     glBegin(GL_POLYGON);
+    // Esquina superior izquierda (verde)
+    glColor3f(0, 1, 0); // Verde
     glVertex3f(-3, 0, 20);
+
+    // Esquina inferior izquierda (verde)
+    glColor3f(0, 1, 0); // Verde
     glVertex3f(-3, 0, -15);
+
+    // Esquina inferior derecha (azul)
+    glColor3f(0, 0, 1); // Azul
     glVertex3f(-10, 0, -15);
+
+    // Esquina superior derecha (azul)
+    glColor3f(0, 0, 1); // Azul
     glVertex3f(-10, 0, 20);
     glEnd();
 
+    // Segundo polígono (color uniforme verde)
     GLfloat verde[] = {0, 1, 0};
     glMaterialfv(GL_FRONT, GL_EMISSION, verde);
     glBegin(GL_POLYGON);
@@ -443,11 +456,10 @@ void igvEscena3D::pintar_quad() {
     glEnd();
 }
 
-
 void igvEscena3D::establecer_luces() {
 
     GLfloat light_position[4] = {0.0, 0.0, 0.0, 1.0};
-    GLfloat light_diffuse[4] =  {1.0, 1.0, 1.0, 1.0};
+    GLfloat light_diffuse[4] = {1.0, 1.0, 1.0, 1.0};
     GLfloat light_ambient[4] = {1.0, 1.0, 1.0, 1.0};
     GLfloat light_specular[4] = {1.0, 1.0, 1.0, 1.0};
 
@@ -480,6 +492,8 @@ void igvEscena3D::visualizar(int escena) {  // crear luces
         renderEscenaB();
     } else if (escena == EscenaC) {
         renderEscenaC();
+    } else if (escena == EscenaD) {
+        renderEscenaFinal();
     }
 
     glPopMatrix(); // restaura la matriz de modelado
@@ -524,8 +538,43 @@ void igvEscena3D::renderEscenaB() {
 }
 
 void igvEscena3D::renderEscenaC() {
+    glPushMatrix();
+
     pintar_quad();
     generarBases();
+
+    glPopMatrix();
+}
+
+void igvEscena3D::visualizarBola() {
+    cabeza();
+}
+
+void igvEscena3D::renderEscenaFinal() {
+
+    // Guardar el estado actual de la matriz
+    glPushMatrix();
+
+    // Posicionar y visualizar el muñeco
+    glPushMatrix();
+    glTranslatef(3.59, 0.00, 6.41); // Ajustar la posición del muñeco
+    visualizarMunneco();
+    glPopMatrix(); // Restaurar la matriz antes de dibujar el muñeco
+
+    // Posicionar y visualizar la grúa
+    glPushMatrix();
+    glTranslatef(6.41, 0.00, 3.59); // Ajustar la posición de la grúa
+    visualizarGrua();
+    glPopMatrix(); // Restaurar la matriz antes de dibujar la grúa
+
+    // Posicionar y visualizar la bola
+    glPushMatrix();
+    glTranslatef(2.88, 0.00, 2.88); // Ajustar la posición de la bola
+    visualizarBola();
+    glPopMatrix(); // Restaurar la matriz antes de dibujar la bola
+
+    // Restaurar el estado original de la matriz
+    glPopMatrix();
 }
 
 /**

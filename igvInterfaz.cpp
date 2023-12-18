@@ -54,6 +54,7 @@ void igvInterfaz::create_menu() {
     glutAddMenuEntry(_instancia->escena.Nombre_EscenaA, _instancia->escena.EscenaA);
     glutAddMenuEntry(_instancia->escena.Nombre_EscenaB, _instancia->escena.EscenaB);
     glutAddMenuEntry(_instancia->escena.Nombre_EscenaC, _instancia->escena.EscenaC);
+    glutAddMenuEntry(_instancia->escena.Nombre_EscenaD, _instancia->escena.EscenaD);
 
     glutAttachMenu(GLUT_RIGHT_BUTTON);
 }                                                                                                                   /**
@@ -86,7 +87,7 @@ void igvInterfaz::inicia_bucle_visualizacion() {
 void igvInterfaz::mover_luces() {
 
     GLfloat light_position[4] = {1.0, 1.0, 1.0, 1.0};
-    GLfloat light_diffuse[4] =  {1.0, 1.0, 1.0, 1.0};
+    GLfloat light_diffuse[4] = {1.0, 1.0, 1.0, 1.0};
     GLfloat light_ambient[4] = {1.0, 1.0, 1.0, 1.0};
     GLfloat light_specular[4] = {1.0, 1.0, 1.0, 1.0};
 
@@ -179,37 +180,37 @@ void igvInterfaz::mover_camara() {
     _instancia->camara.aplicar();
 }
 
-void igvInterfaz::mover_luz(int num_pasos) {
-    GLfloat **luz = _instancia->escena.luz_principal;
-
-    double distancia = 5;
-    double delta = distancia / num_pasos;
-
-    for (int i = 0; i < num_pasos; ++i) {
-        *luz[0] = *luz[0] + delta;
-        // *luz[1] = *luz[1] + delta;
-        // *luz[2] = *luz[2] + delta;
-        Sleep(50);
+void igvInterfaz::camara_D() {
+    if (_instancia->menuSelection == 4) {
+        _instancia->camara.set(IGV_FRUSTUM, {-5, 5, -5}, {3, 3, 3}, {0, 1.0, 0},-5, 5, -5, 5, 2, 200);
     }
 }
 
 void igvInterfaz::keyboardFunc(unsigned char key, int x, int y) {
 
     switch (key) {
+        // Cuando se cambia a la vista 4 (escena final) se usa para establecer una camara que mire a los objetos
+        case 't':
+            _instancia->camara_D();
+            break;
+        // Mueve la camara hacia la derecha 5 veces de forma ciclica
         case 'r':
             _instancia->mover_camara();
             break;
+        // Mueve una luz hacia la derecha 5 veces de forma ciclica
         case 'l':
             _instancia->mover_luces();
             break;
+            // cambia la pespectiva de la camara
         case 'k':
             _instancia->camara.cambiar_tipo_camara();
             break;
+            // zoom
         case 'z':
-            _instancia->camara.zoom(-2);
+            _instancia->camara.zoom(-5);
             break;
         case 'Z':
-            _instancia->camara.zoom(2);
+            _instancia->camara.zoom(5);
             break;
         case 'e': // activa/desactiva la visualizacion de los ejes
             _instancia->escena.set_ejes(!_instancia->escena.get_ejes());
@@ -218,10 +219,10 @@ void igvInterfaz::keyboardFunc(unsigned char key, int x, int y) {
             exit(1);
             break;
         case 'c':
-            _instancia->escena.setAngCabeza(_instancia->escena.getAngCabeza() + 1);
+            _instancia->escena.setAngCabeza(_instancia->escena.getAngCabeza() + 3);
             break;
         case 'C':
-            _instancia->escena.setAngCabeza(_instancia->escena.getAngCabeza() - 1);
+            _instancia->escena.setAngCabeza(_instancia->escena.getAngCabeza() - 3);
             break;
         case 'p':
             if (_instancia->escena.getAngPiernaD() == 45 && _instancia->escena.getAngPiernaI() == -45
@@ -233,14 +234,14 @@ void igvInterfaz::keyboardFunc(unsigned char key, int x, int y) {
                 _instancia->escena.setAngPiernaD(_instancia->escena.getAngPiernaD() - 1);
                 _instancia->escena.setAngPiernaI(_instancia->escena.getAngPiernaI() + 1);
 
-                _instancia->escena.setAngBrazoD(_instancia->escena.getAngBrazoD() - 1);
-                _instancia->escena.setAngBrazoI(_instancia->escena.getAngBrazoI() - 1);
+                // _instancia->escena.setAngBrazoD(_instancia->escena.getAngBrazoD() - 1);
+                // _instancia->escena.setAngBrazoI(_instancia->escena.getAngBrazoI() - 1);
             } else {
                 _instancia->escena.setAngPiernaD(_instancia->escena.getAngPiernaD() + 1);
                 _instancia->escena.setAngPiernaI(_instancia->escena.getAngPiernaI() - 1);
 
-                _instancia->escena.setAngBrazoD(_instancia->escena.getAngBrazoD() + 1);
-                _instancia->escena.setAngBrazoI(_instancia->escena.getAngBrazoI() + 1);
+                // _instancia->escena.setAngBrazoD(_instancia->escena.getAngBrazoD() + 1);
+                // _instancia->escena.setAngBrazoI(_instancia->escena.getAngBrazoI() + 1);
             }
         case 'd':
             _instancia->escena.setPos(_instancia->escena.getPos() - 0.2);
@@ -255,7 +256,7 @@ void igvInterfaz::keyboardFunc(unsigned char key, int x, int y) {
             _instancia->escena.setPos2(_instancia->escena.getPos2() + 0.2);
             break;
     }
-    printf("Posicion: %d\n", _instancia->posicion_camara);
+    printf("Tecla \'%c\'\n", key);
     glutPostRedisplay(); // renueva el contenido de la ventana de vision
 }
 
@@ -276,7 +277,7 @@ void igvInterfaz::reshapeFunc(int w, int h) {  // dimensiona el viewport al nuev
 }
 
 /**
- * Método para renderEscenaA la escena
+ * Método para renderizar la escena
  */
 void igvInterfaz::displayFunc() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // borra la ventana y el z-buffer

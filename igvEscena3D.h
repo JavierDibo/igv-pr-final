@@ -43,10 +43,12 @@ public:
     const int EscenaA = 1;   ///< Identificador interno de la escena A
     const int EscenaB = 2;   ///< Identificador interno de la escena B
     const int EscenaC = 3;
+    const int EscenaD = 4;
 
     const char *Nombre_EscenaA = "Escena A";   ///< Etiqueta de la escena A
     const char *Nombre_EscenaB = "Escena B";   ///< Etiqueta de la escena B
     const char *Nombre_EscenaC = "Escena C";
+    const char *Nombre_EscenaD = "Escena final";
 
 // método con las llamadas OpenGL para renderEscenaA la escena
     void renderEscenaA();
@@ -149,7 +151,7 @@ public:
 
     void visualizarEstructura(int num);
 
-    void visualizarBaseGrua();
+    void visualizarGrua();
 
     void visualizarColumna(const float *punto_partida, const float *centro_anterior);
 
@@ -188,6 +190,10 @@ public:
     void pintar_quad();
 
     void visualizar(int escena);
+
+    void renderEscenaFinal();
+
+    void visualizarBola();
 };
 
 #endif   // __IGVESCENA3D

@@ -16,13 +16,16 @@ igvInterfaz *igvInterfaz::_instancia = nullptr;
  */
 igvInterfaz &igvInterfaz::getInstancia() {
     if (!_instancia) {
-        _instancia = new igvInterfaz;
+        _instancia = new igvInterfaz();
     }
 
     return *_instancia;
 }
 
-igvInterfaz::igvInterfaz() : menuSelection(escena.EscenaA) {}
+igvInterfaz::igvInterfaz() {
+    menuSelection = escena.EscenaA;
+    escena.setCamara(&camara);
+}
 
 void
 igvInterfaz::configura_entorno(int argc, char **argv, int _ancho_ventana, int _alto_ventana, int _pos_X, int _pos_Y,
@@ -182,7 +185,7 @@ void igvInterfaz::mover_camara() {
 
 void igvInterfaz::camara_D() {
     if (_instancia->menuSelection == 4) {
-        _instancia->camara.set(IGV_FRUSTUM, {-5, 5, -5}, {3, 3, 3}, {0, 1.0, 0},-5, 5, -5, 5, 2, 200);
+        _instancia->camara.set(IGV_FRUSTUM, {-5, 5, -5}, {3, 3, 3}, {0, 1.0, 0}, -5, 5, -5, 5, 2, 200);
     }
 }
 
@@ -193,11 +196,11 @@ void igvInterfaz::keyboardFunc(unsigned char key, int x, int y) {
         case 't':
             _instancia->camara_D();
             break;
-        // Mueve la camara hacia la derecha 5 veces de forma ciclica
+            // Mueve la camara hacia la derecha 5 veces de forma ciclica
         case 'r':
             _instancia->mover_camara();
             break;
-        // Mueve una luz hacia la derecha 5 veces de forma ciclica
+            // Mueve una luz hacia la derecha 5 veces de forma ciclica
         case 'l':
             _instancia->mover_luces();
             break;

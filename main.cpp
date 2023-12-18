@@ -3,6 +3,7 @@
 #include "igvInterfaz.h"
 
 int main(int argc, char **argv) {
+
     // inicializa la ventana de visualización
     igvInterfaz::getInstancia().configura_entorno(argc, argv, 600, 600 // tamaño de la ventana
             , 100, 100 // posición de la ventana

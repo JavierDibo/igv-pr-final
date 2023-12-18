@@ -12,6 +12,7 @@
 #endif // defined(__APPLE__) && defined(__MACH__)
 
 #include <cmath>
+#include "igvCamara.h"
 
 /**
  * Partes del modelo
@@ -38,8 +39,12 @@ private:
     float anguloColumna = 0.0;
     float profundidadCable = 1;
     float largoCable = 2;
+    igvCamara *camara;
 
 public:
+
+    igvEscena3D();
+
     const int EscenaA = 1;   ///< Identificador interno de la escena A
     const int EscenaB = 2;   ///< Identificador interno de la escena B
     const int EscenaC = 3;
@@ -60,6 +65,7 @@ public:
     //Prueba movimiento
     float pos;
     float pos2;
+    bool sett = false;
 
     float getPos() const;
 
@@ -79,7 +85,6 @@ public:
     bool ejes = true;   ///< Indica si hay que dibujar los ejes coordenados o no
 
     // Constructores por defecto y destructor
-    igvEscena3D();
 
     ~igvEscena3D();
 
@@ -194,6 +199,10 @@ public:
     void renderEscenaFinal();
 
     void visualizarBola();
+
+    void setCamara(igvCamara *camara);
+
+    void suelo_escena_final();
 };
 
 #endif   // __IGVESCENA3D

@@ -578,6 +578,8 @@ CMakeFiles/igv-pr-final.dir/igvEscena3D.cpp.obj
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/GL/glu.h
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cmath
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/math.h
+ C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/igvCamara.h
+ C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/igvPunto3D.h
 
 CMakeFiles/igv-pr-final.dir/igvInterfaz.cpp.obj
  C:/Users/jfdg0/Desktop/Informatica Grafica y Visual/igv-pr-final/igvInterfaz.cpp

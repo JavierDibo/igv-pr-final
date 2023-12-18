@@ -6,7 +6,7 @@
 /**
  * Constructor por defecto
  */
-igvEscena3D::igvEscena3D() {  // TODO: Apartado C: inicializar los atributos para el control de los grados de libertad del modelo
+igvEscena3D::igvEscena3D() {
     angCabeza = 0;
     angPiernaD = 0;
     angPiernaI = 0;
@@ -157,6 +157,7 @@ void igvEscena3D::visualizarBase() {
 void igvEscena3D::visualizarMunneco() {
     glPushMatrix();
     // glTranslatef(0,3,0);
+
     rotarCabeza(angCabeza);
     visualizarPiernaIzq();
     visualizarPiernaDer();
@@ -167,7 +168,6 @@ void igvEscena3D::visualizarMunneco() {
     glPopMatrix();
 }
 
-// TODO: Apartado C: añadir aquí los métodos para modificar los grados de libertad del modelo
 void igvEscena3D::rotarCabeza(int ang) {
     glRotatef(ang, 0, 1, 0);
 }
@@ -297,6 +297,8 @@ void igvEscena3D::visualizarGrua() {
     float t1 = 0.00, t2 = s2 / 2, t3 = 0.00;
 
     glPushMatrix();
+
+    marron();
 
     glTranslatef(t1, t2, t3);
     glScalef(s1, s2, s3);
@@ -456,6 +458,44 @@ void igvEscena3D::pintar_quad() {
     glEnd();
 }
 
+void perla() {
+/*    glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHT0);
+    glShadeModel(GL_SMOOTH);
+    glEnable(GL_DEPTH_TEST);*/
+
+    // Definiendo las propiedades del material 'pearl'
+    GLfloat mat_ambient[] = { 0.25, 0.20725, 0.20725, 1.0 };
+    GLfloat mat_diffuse[] = { 0.829, 0.829, 0.296648, 1.0 };
+    GLfloat mat_specular[] = { 0.296648, 0.296648, 0.296648, 1.0 };
+    GLfloat mat_shininess[] = { 0.088 * 128.0 };  // El valor de shininess en OpenGL se multiplica por 128
+
+    // Aplicando las propiedades al material
+    glMaterialfv(GL_FRONT, GL_AMBIENT, mat_ambient);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, mat_diffuse);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
+    glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
+}
+
+void igvEscena3D::suelo_escena_final() {
+
+    glPushMatrix();
+
+    perla();
+
+    glBegin(GL_POLYGON);
+
+    glVertex3f(-50, -1, -50); // Esquina inferior izquierda
+    glVertex3f(-50, -1, 50); // Esquina superior izquierda
+    glVertex3f(50, -1, 50); // Esquina superior derecha
+    glVertex3f(50, -1, -50); // Esquina inferior derecha
+
+    glEnd();
+
+    glPopMatrix();
+}
+
+
 void igvEscena3D::establecer_luces() {
 
     GLfloat light_position[4] = {0.0, 0.0, 0.0, 1.0};
@@ -487,10 +527,13 @@ void igvEscena3D::visualizar(int escena) {  // crear luces
 
     // Escena seleccionada a través del menú (clic botón derecho)
     if (escena == EscenaA) {
+        sett = false;
         renderEscenaA();
     } else if (escena == EscenaB) {
+        sett = false;
         renderEscenaB();
     } else if (escena == EscenaC) {
+        sett = false;
         renderEscenaC();
     } else if (escena == EscenaD) {
         renderEscenaFinal();
@@ -552,24 +595,39 @@ void igvEscena3D::visualizarBola() {
 
 void igvEscena3D::renderEscenaFinal() {
 
+    if (!sett) {
+        ejes = false;
+        camara->set(IGV_PARALELA, {0, 5, 0}, {5, 3, 5}, {0, 1.0, 0},
+                    -200, 200, -200, 200, -200, 200);
+        sett = true;
+        for (int i = 0; i < 130; ++i) {
+            camara->zoom(5);
+        }
+    }
+
     // Guardar el estado actual de la matriz
     glPushMatrix();
 
-    // Posicionar y visualizar el muñeco
-    glPushMatrix();
-    glTranslatef(3.59, 0.00, 6.41); // Ajustar la posición del muñeco
-    visualizarMunneco();
-    glPopMatrix(); // Restaurar la matriz antes de dibujar el muñeco
+    // suelo_escena_final();
+
+    glPopMatrix();
 
     // Posicionar y visualizar la grúa
     glPushMatrix();
-    glTranslatef(6.41, 0.00, 3.59); // Ajustar la posición de la grúa
+    glTranslatef(7, 1.50, 1); // Ajustar la posición de la grúa
     visualizarGrua();
     glPopMatrix(); // Restaurar la matriz antes de dibujar la grúa
 
+    // Posicionar y visualizar el muñeco
+    glPushMatrix();
+    glTranslatef(1, 2.5, 7); // Ajustar la posición del muñeco
+    // visualizarMunneco();
+    esmeralda();
+    glPopMatrix(); // Restaurar la matriz antes de dibujar el muñeco
+
     // Posicionar y visualizar la bola
     glPushMatrix();
-    glTranslatef(2.88, 0.00, 2.88); // Ajustar la posición de la bola
+    glTranslatef(5, 0.00, 5); // Ajustar la posición de la bola
     visualizarBola();
     glPopMatrix(); // Restaurar la matriz antes de dibujar la bola
 
@@ -658,4 +716,8 @@ float igvEscena3D::getPos2() const {
 
 void igvEscena3D::setPos2(float pos2) {
     igvEscena3D::pos2 = pos2;
+}
+
+void igvEscena3D::setCamara(igvCamara *camara) {
+    igvEscena3D::camara = camara;
 }

@@ -411,7 +411,7 @@ void igvEscena3D::visualizarBrazoIzq() {
     glMaterialfv(GL_FRONT, GL_EMISSION, carne);
     rotarBrazoI(angBrazoI);
     glPushMatrix();
-    glTranslatef(-1.75, 0.5, 0.2);
+    glTranslatef(-1.75, 0.5, 0.0);
     mano();
     glPopMatrix();
     glPushMatrix();

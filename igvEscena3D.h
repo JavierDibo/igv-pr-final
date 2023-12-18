@@ -53,7 +53,7 @@ public:
     const char *Nombre_EscenaA = "Escena A";   ///< Etiqueta de la escena A
     const char *Nombre_EscenaB = "Escena B";   ///< Etiqueta de la escena B
     const char *Nombre_EscenaC = "Escena C";
-    const char *Nombre_EscenaD = "Escena final";
+    const char *Nombre_EscenaD = "Escena D";
 
 // método con las llamadas OpenGL para renderEscenaA la escena
     void renderEscenaA();
@@ -196,7 +196,7 @@ public:
 
     void visualizar(int escena);
 
-    void renderEscenaFinal();
+    void renderEscenaD();
 
     void visualizarBola();
 

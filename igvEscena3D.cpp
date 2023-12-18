@@ -536,7 +536,7 @@ void igvEscena3D::visualizar(int escena) {  // crear luces
         sett = false;
         renderEscenaC();
     } else if (escena == EscenaD) {
-        renderEscenaFinal();
+        renderEscenaD();
     }
 
     glPopMatrix(); // restaura la matriz de modelado
@@ -593,7 +593,7 @@ void igvEscena3D::visualizarBola() {
     cabeza();
 }
 
-void igvEscena3D::renderEscenaFinal() {
+void igvEscena3D::renderEscenaD() {
 
     if (!sett) {
         ejes = false;

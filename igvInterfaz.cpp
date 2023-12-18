@@ -259,7 +259,6 @@ void igvInterfaz::keyboardFunc(unsigned char key, int x, int y) {
             _instancia->escena.setPos2(_instancia->escena.getPos2() + 0.2);
             break;
     }
-    printf("Tecla \'%c\'\n", key);
     glutPostRedisplay(); // renueva el contenido de la ventana de vision
 }
 

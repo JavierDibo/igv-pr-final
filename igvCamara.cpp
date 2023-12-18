@@ -149,6 +149,20 @@ const igvPunto3D &igvCamara::getV() const {
     return V;
 }
 
+/**
+ * Cambia el tipo de cámara entre diferentes modos disponibles.
+ * Esta función alterna la cámara entre los modos paralela, frustum y perspectiva,
+ * ajustando los parámetros necesarios para cada modo.
+ *
+ * La función utiliza una declaración switch para cambiar el tipo de cámara basado
+ * en su estado actual. Cada caso ajusta el tipo de cámara y llama a la función 'set'
+ * con parámetros específicos para cada tipo de cámara. Al final, se llama a 'aplicar'
+ * para implementar los cambios.
+ *
+ * @pre Se asume que el tipo de cámara actual está correctamente establecido en uno de los
+ *      modos conocidos (IGV_PARALELA, IGV_FRUSTUM, o IGV_PERSPECTIVA).
+ * @post La cámara cambia a un tipo diferente, con los parámetros ajustados para ese tipo.
+ */
 void igvCamara::cambiar_tipo_camara() {
     switch (tipo) {
         case IGV_PARALELA:

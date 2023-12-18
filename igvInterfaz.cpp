@@ -87,6 +87,22 @@ void igvInterfaz::inicia_bucle_visualizacion() {
     glutMainLoop(); // inicia el bucle de visualización de GLUT
 }
 
+/**
+ * Modifica la posición y color de la iluminación en la escena.
+ * Esta función ajusta la posición y el color difuso de una luz (GL_LIGHT0) basándose
+ * en una variable interna 'pos_luz' que determina la configuración actual de la luz.
+ * La función alterna entre diferentes configuraciones de luz, cambiando tanto la
+ * posición como el color de la misma.
+ *
+ * Dentro de la función, se utiliza una declaración switch para modificar los valores
+ * de posición y color difuso de la luz según el valor de 'pos_luz'. Después de ajustar
+ * estos valores, se aplican a la luz mediante llamadas a glLightfv y se habilita la
+ * iluminación y GL_LIGHT0.
+ *
+ * @pre 'pos_luz' debe estar inicializado y dentro del rango de los casos definidos.
+ * @post La posición y el color de GL_LIGHT0 se actualizan, y la iluminación se activa.
+ *       El valor de 'pos_luz' se incrementa para la próxima llamada.
+ */
 void igvInterfaz::mover_luces() {
 
     GLfloat light_position[4] = {1.0, 1.0, 1.0, 1.0};
@@ -154,6 +170,23 @@ void igvInterfaz::mover_luces() {
     _instancia->pos_luz = (_instancia->pos_luz + 1) % NUM_POSICIONES_LUZ;
 }
 
+/**
+ * Cambia la posición de la cámara y actualiza su configuración.
+ * Esta función modifica la posición actual de la cámara basándose en el valor de
+ * 'posicion_camara' de la instancia. La posición de la cámara se actualiza y se
+ * recalculan los parámetros de la misma según su tipo actual (paralela, frustum o
+ * perspectiva).
+ *
+ * Primero, la función incrementa y ajusta el valor de 'posicion_camara' y calcula
+ * una nueva posición para la cámara. Luego, obtiene el tipo actual de la cámara y
+ * ajusta sus parámetros manteniendo el tipo de proyección actual. Finalmente, aplica
+ * los cambios a la cámara.
+ *
+ * @pre 'posicion_camara' debe estar inicializada y debe ser un valor válido dentro
+ *      del rango de posiciones definidas por NUM_POSICIONES_CAMARA.
+ * @post La cámara se mueve a una nueva posición y se actualizan sus parámetros
+ *       según el tipo de proyección que tenga actualmente.
+ */
 void igvInterfaz::mover_camara() {
     double num;
     _instancia->posicion_camara = (_instancia->posicion_camara + 1) % NUM_POSICIONES_CAMARA;
@@ -189,6 +222,26 @@ void igvInterfaz::camara_D() {
     }
 }
 
+/**
+ * Maneja las entradas del teclado para interactuar con la escena.
+ * Esta función responde a diversas teclas presionadas por el usuario, activando
+ * diferentes funcionalidades como mover la cámara, cambiar luces, ajustar la
+ * perspectiva de la cámara, aplicar zoom y otras interacciones.
+ *
+ * Cada tecla presionada ('t', 'r', 'l', 'k', 'z', 'Z', etc.) está asociada con
+ * una acción específica. Por ejemplo, 't' cambia a una cámara específica, 'r' y 'l'
+ * mueven la cámara y las luces respectivamente, 'k' cambia el tipo de cámara, y
+ * 'z'/'Z' aplican zoom. Las teclas 'w', 'a', 's', 'd' ajustan la posición de la
+ * escena, y 'e' activa o desactiva la visualización de los ejes. La tecla 'c'/'C'
+ * ajusta el ángulo de la cabeza, y 'p' controla el movimiento de las piernas.
+ * La tecla de escape (27) se utiliza para salir del programa.
+ *
+ * @param key Tecla presionada.
+ * @param x Posición horizontal del cursor en el momento de la pulsación.
+ * @param y Posición vertical del cursor en el momento de la pulsación.
+ * @post Dependiendo de la tecla presionada, se ejecutan diferentes acciones que
+ *       afectan a la cámara, las luces, la escena, o terminan el programa.
+ */
 void igvInterfaz::keyboardFunc(unsigned char key, int x, int y) {
 
     switch (key) {
@@ -312,7 +365,7 @@ static std::uniform_real_distribution<float> tiempo(0.0f, 5.0f);
 static float tiempo_random = tiempo(random);
 
 /**
- * Método para animar la escena
+ * Método para animar la grua
  */
 void igvInterfaz::idleFunc() {
     int tiempo_actual = glutGet(GLUT_ELAPSED_TIME);

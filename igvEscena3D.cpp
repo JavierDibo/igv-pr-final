@@ -116,6 +116,9 @@ void igvEscena3D::visualizarCabeza() {
     glPopMatrix();
 }
 
+/**
+ * Establece el color marron
+ */
 void marron() {
     GLfloat mat_ambient[] = {0.24725, 0.1995, 0.0745, 1.0};
     GLfloat mat_diffuse[] = {0.75164, 0.60648, 0.22648, 1.0};
@@ -128,6 +131,9 @@ void marron() {
     glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
 }
 
+/**
+ * Establece el color esmeralda
+ */
 void esmeralda() {
     GLfloat mat_ambient[] = {0.0215, 0.1745, 0.0215, 1.0};
     GLfloat mat_diffuse[] = {0.07568, 0.61424, 0.07568, 1.0};
@@ -140,6 +146,9 @@ void esmeralda() {
     glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
 }
 
+/**
+ * Visualiza los pedestales sobre los que se paran los objetos
+ */
 void igvEscena3D::visualizarBase() {
     glPushMatrix(); // Guarda el estado actual de la matriz
 
@@ -154,6 +163,9 @@ void igvEscena3D::visualizarBase() {
     glPopMatrix();
 }
 
+/**
+ * Visualiza el objeto Muñeco
+ */
 void igvEscena3D::visualizarMunneco() {
     glPushMatrix();
     // glTranslatef(0,3,0);
@@ -291,6 +303,9 @@ void igvEscena3D::visualizarColumna(const float punto_partida[3], const float ce
     visualizarBrazo(centro_cara_superior, centro);
 }
 
+/**
+ * Visualiza el objeto grua
+ */
 void igvEscena3D::visualizarGrua() {
 
     float s1 = 1.00, s2 = 0.50, s3 = 1.00;
@@ -323,6 +338,10 @@ void igvEscena3D::visualizarGrua() {
     visualizarColumna(cara_superior, centro);
 }
 
+/**
+ * Visualiza las estructuras y las colca de forma consecutiva
+ * @param num Establece el numero d eestructuras
+ */
 void igvEscena3D::visualizarEstructura(int num) {
     GLfloat altura;
     if (num == 0 || num == 3) {
@@ -338,7 +357,6 @@ void igvEscena3D::visualizarEstructura(int num) {
         glTranslatef(0, -altura, 0);
     }
 }
-
 
 void igvEscena3D::visualizarPiernaIzq() {
 
@@ -405,6 +423,9 @@ void igvEscena3D::visualizarBrazoIzq() {
     glPopMatrix();
 }
 
+/**
+ * Genera los pedestales con los objetos encima
+ */
 void igvEscena3D::generarBases() {
     GLfloat negro[4] = {0, 0, 0, 1};
 
@@ -427,6 +448,9 @@ void igvEscena3D::generarBases() {
     }
 }
 
+/**
+ * Pinta el suelo para las escenas con campos de futbol
+ */
 void igvEscena3D::pintar_quad() {
     // Primer polígono (gradiente de verde a azul)
     glBegin(GL_POLYGON);
@@ -458,6 +482,9 @@ void igvEscena3D::pintar_quad() {
     glEnd();
 }
 
+/**
+ * Color perla
+ */
 void perla() {
 /*    glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
@@ -477,41 +504,24 @@ void perla() {
     glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
 }
 
-void igvEscena3D::suelo_escena_final() {
-
-    glPushMatrix();
-
-    perla();
-
-    glBegin(GL_POLYGON);
-
-    glVertex3f(-50, -1, -50); // Esquina inferior izquierda
-    glVertex3f(-50, -1, 50); // Esquina superior izquierda
-    glVertex3f(50, -1, 50); // Esquina superior derecha
-    glVertex3f(50, -1, -50); // Esquina inferior derecha
-
-    glEnd();
-
-    glPopMatrix();
-}
-
-
-void igvEscena3D::establecer_luces() {
-
-    GLfloat light_position[4] = {0.0, 0.0, 0.0, 1.0};
-    GLfloat light_diffuse[4] = {1.0, 1.0, 1.0, 1.0};
-    GLfloat light_ambient[4] = {1.0, 1.0, 1.0, 1.0};
-    GLfloat light_specular[4] = {1.0, 1.0, 1.0, 1.0};
-
-    glLightfv(GL_LIGHT0, GL_POSITION, light_position);
-    glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
-    glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse);
-    glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
-
-    glEnable(GL_LIGHTING);
-    glEnable(GL_LIGHT0);
-}
-
+/**
+ * Visualiza una de las escenas predefinidas en función del parámetro 'escena'.
+ * Esta función configura y muestra una escena específica de las disponibles.
+ * Inicialmente, configura una luz puntual y luego renderiza la escena seleccionada
+ * basada en el valor de 'escena'.
+ *
+ * La función comienza activando la iluminación y configurando la luz GL_LIGHT0 en
+ * una posición fija. Luego, utilizando una estructura de control condicional,
+ * selecciona y renderiza una de las escenas predefinidas (EscenaA, EscenaB, EscenaC,
+ * EscenaD), dependiendo del valor del parámetro 'escena'. También gestiona la
+ * visualización de ejes si la variable 'ejes' está activada.
+ *
+ * @param escena Indica cuál de las escenas predefinidas debe ser renderizada.
+ * @pre 'escena' debe ser un valor válido que corresponda a una de las escenas
+ *      predefinidas (EscenaA, EscenaB, EscenaC, EscenaD).
+ * @post La escena seleccionada es renderizada con la configuración de iluminación
+ *       y visualización de ejes (si está activada).
+ */
 void igvEscena3D::visualizar(int escena) {  // crear luces
     GLfloat luz0[4] = {5.0, 5.0, 5.0, 1}; // luz puntual
     glLightfv(GL_LIGHT0, GL_POSITION, luz0); // la luz se coloca aquí si permanece fija y no se mueve con la escena
@@ -542,6 +552,9 @@ void igvEscena3D::visualizar(int escena) {  // crear luces
     glPopMatrix(); // restaura la matriz de modelado
 }
 
+/**
+ * Renderiza la escena A
+ */
 void igvEscena3D::renderEscenaA() {
 
     // crear el modelo
@@ -557,6 +570,9 @@ void igvEscena3D::renderEscenaA() {
     glPopMatrix(); // restaura la matriz de modelado
 }
 
+/**
+ * Renderiza la escena B
+ */
 void igvEscena3D::renderEscenaB() {
 
     glPushMatrix();
@@ -580,6 +596,9 @@ void igvEscena3D::renderEscenaB() {
     glPopMatrix();
 }
 
+/**
+ * Renderiza la escena C
+ */
 void igvEscena3D::renderEscenaC() {
     glPushMatrix();
 
@@ -593,6 +612,9 @@ void igvEscena3D::visualizarBola() {
     cabeza();
 }
 
+/**
+ * Renderiza la escena D
+ */
 void igvEscena3D::renderEscenaD() {
 
     if (!sett) {
@@ -651,8 +673,27 @@ bool igvEscena3D::get_ejes() const {
  *       de acuerdo al valor pasado como parámetro
  */
 void igvEscena3D::set_ejes(bool _ejes) {
-    ejes = _ejes;
+    ejes = _ejes;/**
+ * Visualiza una de las escenas predefinidas en función del parámetro 'escena'.
+ * Esta función configura y muestra una escena específica de las disponibles.
+ * Inicialmente, configura una luz puntual y luego renderiza la escena seleccionada
+ * basada en el valor de 'escena'.
+ *
+ * La función comienza activando la iluminación y configurando la luz GL_LIGHT0 en
+ * una posición fija. Luego, utilizando una estructura de control condicional,
+ * selecciona y renderiza una de las escenas predefinidas (EscenaA, EscenaB, EscenaC,
+ * EscenaD), dependiendo del valor del parámetro 'escena'. También gestiona la
+ * visualización de ejes si la variable 'ejes' está activada.
+ *
+ * @param escena Indica cuál de las escenas predefinidas debe ser renderizada.
+ * @pre 'escena' debe ser un valor válido que corresponda a una de las escenas
+ *      predefinidas (EscenaA, EscenaB, EscenaC, EscenaD).
+ * @post La escena seleccionada es renderizada con la configuración de iluminación
+ *       y visualización de ejes (si está activada).
+ */
 }
+
+/// Setters y getters
 
 int igvEscena3D::getAngCabeza() const {
     return angCabeza;

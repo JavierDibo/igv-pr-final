@@ -29,7 +29,6 @@ enum parte {
 class igvEscena3D {
 private:
     // Atributos
-    // TODO: Apartado C: añadir quí los atributos para el control de los grados de libertad del modelo
 
     int angCabeza;
     int angPiernaI;
@@ -40,20 +39,49 @@ private:
     float profundidadCable = 1;
     float largoCable = 2;
 
+public:
+    const int EscenaA = 1;   ///< Identificador interno de la escena A
+    const int EscenaB = 2;   ///< Identificador interno de la escena B
+    const int EscenaC = 3;
+
+    const char *Nombre_EscenaA = "Escena A";   ///< Etiqueta de la escena A
+    const char *Nombre_EscenaB = "Escena B";   ///< Etiqueta de la escena B
+    const char *Nombre_EscenaC = "Escena C";
+
+// método con las llamadas OpenGL para renderEscenaA la escena
+    void renderEscenaA(int pos);
+
+    void renderEscenaB();
+
+    void renderEscenaC();
+
+    //Prueba movimiento
+    float pos;
+    float pos2;
+
+    float getPos() const;
+
+    void setPos(float pos);
+
+    void desplazarLateral(float pos);
+
+    float getPos2() const;
+
+    void setPos2(float pos2);
+
+    void desplazar(float pos);
+
+    GLfloat *luz_principal[4];
+
     // Otros atributos
     bool ejes = true;   ///< Indica si hay que dibujar los ejes coordenados o no
-
-public:
 
     // Constructores por defecto y destructor
     igvEscena3D();
 
     ~igvEscena3D();
 
-    // método con las llamadas OpenGL para visualizar la escena
-    void visualizar(int pos);
-
-    // TODO: Apartado B: Métodos para visualizar cada parte del modelo
+    // TODO: Apartado B: Métodos para renderEscenaA cada parte del modelo
 
     void base();
 
@@ -158,6 +186,12 @@ public:
     void aumentar_profundidad_cable(double scale);
 
     void rotar_derecha(double scale);
+
+    void establecer_luces(int pos);
+
+    void pintar_quad();
+
+    void visualizar(int escena);
 };
 
 #endif   // __IGVESCENA3D

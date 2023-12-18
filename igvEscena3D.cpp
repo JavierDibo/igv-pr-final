@@ -1,6 +1,3 @@
-#include <cstdlib>
-#include <stdio.h>
-
 #include "igvEscena3D.h"
 
 // Métodos constructores
@@ -14,12 +11,24 @@ igvEscena3D::igvEscena3D() {  // TODO: Apartado C: inicializar los atributos par
     angPiernaI = 0;
     angBrazoD = 0;
     angBrazoI = 0;
+
+    for (auto &i: luz_principal) {
+        i = new GLfloat;
+    }
+
+    *luz_principal[0] = 0.0;
+    *luz_principal[1] = 0.0;
+    *luz_principal[2] = 0.0;
+    *luz_principal[3] = 1;
 }
 
 /**
  * Destructor
  */
 igvEscena3D::~igvEscena3D() {
+    for (auto &i: luz_principal) {
+        delete i;
+    }
 }
 
 /**
@@ -49,10 +58,6 @@ void igvEscena3D::pintar_ejes() {
     glEnd();
 }
 
-// Métodos públicos
-
-// TODO: Apartado B: Métodos para visualizar cada parte del modelo
-
 void igvEscena3D::base() {
     glutSolidCube(1);
 }
@@ -81,63 +86,6 @@ void igvEscena3D::mano() {
     glutSolidSphere(0.2, 100, 100);
 }
 
-//PARA APLICAR LOS GRADOS DE LIBERTAD A LAS PARTES DEL CUERPO TENGO QUE HACER DISTINTO METODOS
-//DE VISUALIZACION PARA CADA PARTE TIPO: visualizarCabeza(), visualizarPiernaIzq()...
-void igvEscena3D::visualizarPiernaIzq() {
-    glPushMatrix();
-    rotarPiernaI(angPiernaI);
-    glPushMatrix();
-    glTranslatef(-0.5, -2, 0);
-    glScalef(0.5, 0.2, 1);
-    base();
-    glPopMatrix();
-    glPushMatrix();
-    glTranslatef(-0.5, 0.1, -0.2);
-    glRotatef(90, 1, 0, 0);
-    pierna();
-    glPopMatrix();
-    glPopMatrix();
-}
-
-void igvEscena3D::visualizarPiernaDer() {
-    glPushMatrix();
-    rotarPiernaD(angPiernaD);
-    glPushMatrix();
-    glTranslatef(0.5, -2, 0);
-    glScalef(0.5, 0.2, 1);
-    base();
-    glPopMatrix();
-    glPushMatrix();
-    glTranslatef(0.5, 0.1, -0.2);
-    glRotatef(90, 1, 0, 0);
-    pierna();
-    glPopMatrix();
-    glPopMatrix();
-}
-
-void igvEscena3D::visualizarCuerpo() {
-    glPushMatrix();
-    glTranslatef(0, 2.5, 0);
-    glRotatef(90, 1, 0, 0);
-    cuerpo();
-    glPopMatrix();
-}
-
-void igvEscena3D::visualizarBrazoIzq() {
-    glPushMatrix();
-    rotarBrazoI(angBrazoI);
-    glPushMatrix();
-    glTranslatef(-1.75, 0.5, 0.2);
-    mano();
-    glPopMatrix();
-    glPushMatrix();
-    glTranslatef(-0.2, 2, 0);
-    glRotatef(-45, 0, 0, 1);
-    glRotatef(90, 1, 0, 0);
-    pierna();
-    glPopMatrix();
-    glPopMatrix();
-}
 
 void igvEscena3D::visualizarBrazoDer() {
     glPushMatrix();
@@ -167,8 +115,34 @@ void igvEscena3D::visualizarCabeza() {
     glPopMatrix();
 }
 
+void marron() {
+    GLfloat mat_ambient[] = {0.24725, 0.1995, 0.0745, 1.0};
+    GLfloat mat_diffuse[] = {0.75164, 0.60648, 0.22648, 1.0};
+    GLfloat mat_specular[] = {0.628281, 0.555802, 0.366065, 1.0};
+    GLfloat mat_shininess[] = {51.2};
+
+    glMaterialfv(GL_FRONT, GL_AMBIENT, mat_ambient);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, mat_diffuse);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
+    glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
+}
+
+void esmeralda() {
+    GLfloat mat_ambient[] = {0.0215, 0.1745, 0.0215, 1.0};
+    GLfloat mat_diffuse[] = {0.07568, 0.61424, 0.07568, 1.0};
+    GLfloat mat_specular[] = {0.633, 0.727811, 0.633, 1.0};
+    GLfloat mat_shininess[] = {0.6 * 128.0};  // OpenGL multiplica este valor por 128
+
+    glMaterialfv(GL_FRONT, GL_AMBIENT, mat_ambient);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, mat_diffuse);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
+    glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
+}
+
 void igvEscena3D::visualizarBase() {
     glPushMatrix(); // Guarda el estado actual de la matriz
+
+    esmeralda();
 
     glScalef(1.0, 0.5, 1.0);
 
@@ -362,79 +336,177 @@ void igvEscena3D::visualizarEstructura(int num) {
     }
 }
 
+
+void igvEscena3D::visualizarPiernaIzq() {
+
+    glPushMatrix();
+    GLfloat carne[] = {0.9569, 0.7255, 0.5137}; //(0.9569, 0.7255, 0.5137)
+    glMaterialfv(GL_FRONT, GL_EMISSION, carne);
+    rotarPiernaI(angPiernaI);
+    glPushMatrix();
+    glTranslatef(-0.5, -2, 0);
+    glScalef(0.5, 0.2, 1);
+    base();
+    glPopMatrix();
+    glPushMatrix();
+    glTranslatef(-0.5, 0.1, -0.2);
+    glRotatef(90, 1, 0, 0);
+    pierna();
+    glPopMatrix();
+    glPopMatrix();
+}
+
+void igvEscena3D::visualizarPiernaDer() {
+    glPushMatrix();
+    GLfloat carne[] = {0.9569, 0.7255, 0.5137}; //(0.9569, 0.7255, 0.5137)
+    glMaterialfv(GL_FRONT, GL_EMISSION, carne);
+    rotarPiernaD(angPiernaD);
+    glPushMatrix();
+    glTranslatef(0.5, -2, 0);
+    glScalef(0.5, 0.2, 1);
+    base();
+    glPopMatrix();
+    glPushMatrix();
+    glTranslatef(0.5, 0.1, -0.2);
+    glRotatef(90, 1, 0, 0);
+    pierna();
+    glPopMatrix();
+    glPopMatrix();
+}
+
+void igvEscena3D::visualizarCuerpo() {
+    glPushMatrix();
+    glTranslatef(0, 2.5, 0);
+    glRotatef(90, 1, 0, 0);
+    GLfloat rojo[] = {1, 0, 0, 1.0};
+    glMaterialfv(GL_FRONT, GL_EMISSION, rojo);
+    cuerpo();
+    glPopMatrix();
+}
+
+void igvEscena3D::visualizarBrazoIzq() {
+    glPushMatrix();
+    GLfloat carne[] = {0.9569, 0.7255, 0.5137}; //(0.9569, 0.7255, 0.5137)
+    glMaterialfv(GL_FRONT, GL_EMISSION, carne);
+    rotarBrazoI(angBrazoI);
+    glPushMatrix();
+    glTranslatef(-1.75, 0.5, 0.2);
+    mano();
+    glPopMatrix();
+    glPushMatrix();
+    glTranslatef(-0.2, 2, 0);
+    glRotatef(-45, 0, 0, 1);
+    glRotatef(90, 1, 0, 0);
+    pierna();
+    glPopMatrix();
+    glPopMatrix();
+}
+
 void igvEscena3D::generarBases() {
+    GLfloat negro[4] = {0, 0, 0, 1};
 
     for (int i = 0; i < 5; ++i) {
         glPushMatrix();
+
+        visualizarBase();
+
+        glMaterialfv(GL_FRONT, GL_EMISSION, negro);
         glTranslatef(0, 0, 3 * i);
         glRotatef(27 * i, 0, 1, 0);
-        visualizarBase();
+
         glPushMatrix();
+
         visualizarEstructura(i);
+
         glPopMatrix();
+
         glPopMatrix();
     }
 }
 
-void igvEscena3D::visualizar(int pos) {  // crear luces
-    // Crear luces
-    GLfloat luz0[4] = {5.0, 5.0, 5.0, 1}; // Posición de la luz puntual
+void igvEscena3D::pintar_quad() {
+    glBegin(GL_POLYGON);
+    glVertex3f(-3, 0, 20);
+    glVertex3f(-3, 0, -15);
+    glVertex3f(-10, 0, -15);
+    glVertex3f(-10, 0, 20);
+    glEnd();
 
-    // Inicializa colores de luz por defecto
-    GLfloat colorAmbiente[4] = {0.2, 0.2, 0.2, 1}; // Color de la luz ambiente por defecto
-    GLfloat colorDifuso[4] = {1.0, 1.0, 1.0, 1}; // Color de la luz difusa por defecto
-    GLfloat colorEspecular[4] = {1.0, 1.0, 1.0, 1}; // Color de la luz especular por defecto
+    GLfloat verde[] = {0, 1, 0};
+    glMaterialfv(GL_FRONT, GL_EMISSION, verde);
+    glBegin(GL_POLYGON);
+    glVertex3f(-3, 0, 20);
+    glVertex3f(-3, 0, -15);
+    glVertex3f(10, 0, -15);
+    glVertex3f(10, 0, 20);
+    glEnd();
+}
+
+
+void igvEscena3D::establecer_luces(int pos) {
+
+    GLfloat light_position[] = {1.0, 1.0, 1.0, 0.0};
+    GLfloat light_ambient[] = {0.2, 0.2, 0.2, 1.0};
+    GLfloat light_diffuse[] = {0.8, 0.8, 0.8, 1.0};
+    GLfloat light_specular[] = {1.0, 1.0, 1.0, 1.0};
+
+    glLightfv(GL_LIGHT0, GL_POSITION, light_position);
+    glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse);
+    glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
+
+    glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHT0);
 
     // Cambia el color de la luz según la habitación
     switch (pos) {
         case 1:
-            colorDifuso[0] = 0.0; // Rojo
-            colorDifuso[1] = 1.0; // Verde
-            colorDifuso[2] = 1.0; // Azul
-            luz0[0] = 0;
-            luz0[1] = 0;
-            luz0[2] = 0;
+            light_diffuse[0] = 0.0; // Rojo
+            light_diffuse[1] = 1.0; // Verde
+            light_diffuse[2] = 1.0; // Azul
+            light_position[0] = 0;
+            light_position[1] = 0;
+            light_position[2] = 0;
             break;
         case 2:
-            colorDifuso[0] = 1.0;
-            colorDifuso[1] = 0.0;
-            colorDifuso[2] = 0.0;
-            luz0[0] = 5;
-            luz0[1] = -5;
-            luz0[2] = 0;
+            light_diffuse[0] = 1.0;
+            light_diffuse[1] = 0.0;
+            light_diffuse[2] = 0.0;
+            light_position[0] = 5;
+            light_position[1] = -5;
+            light_position[2] = 0;
             break;
         case 3:
-            colorDifuso[0] = 1.0;
-            colorDifuso[1] = 1.0;
-            colorDifuso[2] = 0.0;
-            luz0[0] = 30;
-            luz0[1] = 5;
-            luz0[2] = 5;
+            light_diffuse[0] = 1.0;
+            light_diffuse[1] = 1.0;
+            light_diffuse[2] = 0.0;
+            light_position[0] = 30;
+            light_position[1] = 5;
+            light_position[2] = 5;
             break;
         case 4: // Verde claro
-            colorDifuso[0] = 1.0;
-            colorDifuso[1] = 0.0;
-            colorDifuso[2] = 1.0;
-            luz0[0] = 0;
-            luz0[1] = 5;
-            luz0[2] = 0;
+            light_diffuse[0] = 1.0;
+            light_diffuse[1] = 0.0;
+            light_diffuse[2] = 1.0;
+            light_position[0] = 0;
+            light_position[1] = 5;
+            light_position[2] = 0;
             break;
         default:
-            colorDifuso[0] = 1.0;
-            colorDifuso[1] = 1.0;
-            colorDifuso[2] = 1.0;
-            luz0[0] = 5;
-            luz0[1] = 5;
-            luz0[2] = 5;
+            light_diffuse[0] = 1.0;
+            light_diffuse[1] = 1.0;
+            light_diffuse[2] = 1.0;
+            light_position[0] = 5;
+            light_position[1] = 5;
+            light_position[2] = 5;
             break;
     }
+}
 
-    glLightfv(GL_LIGHT0, GL_POSITION, luz0); // Configura la posición de la luz
-    glLightfv(GL_LIGHT0, GL_AMBIENT, colorAmbiente); // Configura el color de la luz ambiente
-    glLightfv(GL_LIGHT0, GL_DIFFUSE, colorDifuso); // Configura el color de la luz difusa
-    glLightfv(GL_LIGHT0, GL_SPECULAR, colorEspecular); // Configura el color de la luz especular
-
-    glEnable(GL_LIGHT0); // Habilita la luz 0
+void igvEscena3D::visualizar(int escena) {  // crear luces
+    GLfloat luz0[4] = {5.0, 5.0, 5.0, 1}; // luz puntual
+    glLightfv(GL_LIGHT0, GL_POSITION, luz0); // la luz se coloca aquí si permanece fija y no se mueve con la escena
+    glEnable(GL_LIGHT0);
 
     // crear el modelo
     glPushMatrix(); // guarda la matriz de modelado
@@ -442,9 +514,61 @@ void igvEscena3D::visualizar(int pos) {  // crear luces
     // se pintan los ejes
     if (ejes) { pintar_ejes(); }
 
+    //glLightfv(GL_LIGHT0,GL_POSITION,luz0); // la luz se coloca aquí si se mueve junto con la escena (también habría que desactivar la de arriba).
+
+    // Escena seleccionada a través del menú (clic botón derecho)
+    if (escena == EscenaA) {
+        renderEscenaA(0);
+    } else if (escena == EscenaB) {
+        renderEscenaB();
+    } else if (escena == EscenaC) {
+        renderEscenaC();
+    }
+
+    glPopMatrix(); // restaura la matriz de modelado
+}
+
+void igvEscena3D::renderEscenaA(int pos) {  // crear luces
+
+    // crear el modelo
+    glPushMatrix(); // guarda la matriz de modelado
+
+    establecer_luces(pos);
+
+    // se pintan los ejes
+    if (ejes) { pintar_ejes(); }
+
     generarBases();
 
     glPopMatrix(); // restaura la matriz de modelado
+}
+
+void igvEscena3D::renderEscenaB() {
+
+    glPushMatrix();
+
+    GLfloat gris[] = {0.1, 0.1, 0.1};
+    glMaterialfv(GL_FRONT, GL_EMISSION, gris);
+    glBegin(GL_POLYGON);
+    glVertex3f(20, 0, 20);
+    glVertex3f(20, 0, -15);
+    glVertex3f(-10, 0, -15);
+    glVertex3f(-10, 0, 20);
+    glEnd();
+
+    GLfloat azul[] = {0, 0, 1};
+    glMaterialfv(GL_FRONT, GL_EMISSION, azul);
+    desplazarLateral(pos);
+    desplazar(pos2);
+    glTranslatef(0, 1, 0);
+    cabeza();
+
+    glPopMatrix();
+}
+
+void igvEscena3D::renderEscenaC() {
+    pintar_quad();
+    generarBases();
 }
 
 /**
@@ -506,8 +630,26 @@ void igvEscena3D::setAngBrazoD(int angBrazoD) {
     igvEscena3D::angBrazoD = angBrazoD;
 }
 
+float igvEscena3D::getPos() const {
+    return pos;
+}
 
+void igvEscena3D::setPos(float pos) {
+    igvEscena3D::pos = pos;
+}
 
+void igvEscena3D::desplazarLateral(float pos) {
+    glTranslatef(0, 0, pos);
+}
 
+void igvEscena3D::desplazar(float pos) {
+    glTranslatef(pos, 0, 0);
+}
 
+float igvEscena3D::getPos2() const {
+    return pos2;
+}
 
+void igvEscena3D::setPos2(float pos2) {
+    igvEscena3D::pos2 = pos2;
+}

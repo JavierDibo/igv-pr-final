@@ -1,38 +1,18 @@
 CMakeFiles/igv-pr-final.dir/igvEscena3D.cpp.obj: \
  C:\Users\jfdg0\Desktop\Informatica\ Grafica\ y\ Visual\igv-pr-final\igvEscena3D.cpp \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdlib \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/stdlib.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/corecrt.h \
+ C:\Users\jfdg0\Desktop\Informatica\ Grafica\ y\ Visual\igv-pr-final\igvEscena3D.h \
+ C:/Users/jfdg0/.conan2/p/b/freegce335745f9483/p/include/GL/glut.h \
+ C:/Users/jfdg0/.conan2/p/b/freegce335745f9483/p/include/GL/freeglut_std.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/windows.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/_mingw.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/_mingw_mac.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/_mingw_secapi.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/vadefs.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/limits.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/limits.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/crtdefs.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stdlib.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/malloc.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mm_malloc.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/errno.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_abs.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/stdio.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/_mingw_off_t.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/swprintf.inl \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
- C:\Users\jfdg0\Desktop\Informatica\ Grafica\ y\ Visual\igv-pr-final\igvEscena3D.h \
- C:/Users/jfdg0/.conan2/p/b/freegce335745f9483/p/include/GL/glut.h \
- C:/Users/jfdg0/.conan2/p/b/freegce335745f9483/p/include/GL/freeglut_std.h \
- C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/windows.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/sdkddkver.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/excpt.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/crtdefs.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/corecrt.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdarg.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/stdarg.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/_mingw_stdarg.h \
@@ -96,6 +76,21 @@ CMakeFiles/igv-pr-final.dir/igvEscena3D.cpp.obj: \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/immintrin.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mmintrin.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/xmmintrin.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mm_malloc.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stdlib.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdlib \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/stdlib.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/limits.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/limits.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/malloc.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_abs.h \
+ C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include/errno.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/emmintrin.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/pmmintrin.h \
  C:/Users/jfdg0/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/tmmintrin.h \

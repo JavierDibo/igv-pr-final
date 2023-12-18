@@ -32,15 +32,19 @@ private:
     int alto_ventana = 0;  ///< Alto de la ventana de visualización
 
     igvEscena3D escena; ///< Escena que se visualiza en la ventana definida por igvInterfaz
-    igvCamara camara; ///< Cámara que se utiliza para visualizar la escena
+    igvCamara camara; ///< Cámara que se utiliza para renderEscenaA la escena
 
     // Aplicación del patrón de diseño Singleton
     static igvInterfaz *_instancia; ///< Dirección de memoria del objeto único de la clase
     /// Constructor por defecto
-    igvInterfaz() = default;
+    igvInterfaz();
+
+    int menuSelection = 0; ///< Última opción de menú seleccionada                                                                                                       static void menuHandle(int value); // método para gestionar la selección de opciones de menú
+    void create_menu(); // Creates a menu that is handled with the right button of the mouse.
 
     int cont = 1;
 
+    int num_escena = 1;
     int posicion_camara = 0;
     int posicion_luz = 0;
 
@@ -57,7 +61,7 @@ public:
     static void keyboardFunc(unsigned char key, int x, int y); // método para control de eventos del teclado
     static void reshapeFunc(int w, int h); // método que define la camara de vision y el viewport
     // se llama automáticamente cuando se cambia el tamaño de la ventana
-    static void displayFunc(); // método para visualizar la escena
+    static void displayFunc(); // método para renderEscenaA la escena
     static void idleFunc(); // método para animar la escena
 
     // Métodos
@@ -89,7 +93,13 @@ public:
 
     void mover_camara();
 
+    void cambiar_de_luz();
+
     void mover_luz();
+
+    void mover_luz(int num_pasos);
+
+    static void menuHandle(int value);
 };
 
 #endif   // __IGVINTERFAZ

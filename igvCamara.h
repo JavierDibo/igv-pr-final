@@ -44,7 +44,12 @@ private:
     // atributos
     poscam vis = panoramica;      ///< Posición de la cámara
 
-    tipoCamara tipo = IGV_PARALELA;  ///< Tipo de la cámara
+    tipoCamara tipo = IGV_PARALELA;
+public:
+    tipoCamara getTipo() const;
+
+private:
+    ///< Tipo de la cámara
 
     // ventana de visión: parámetros proyección paralela y frustum
     GLdouble xwmin = -5    ///< Coordenada X mínima del frustum/proyección paralela
@@ -108,6 +113,15 @@ public:
 
     const igvPunto3D &getV() const;
 
+    // Método para alternar entre los diferentes tipos de cámara
+    void cambiar_tipo_camara();
+
+    void
+    getProyeccionParalelaFrustum(GLdouble &_xwmin, GLdouble &_xwmax, GLdouble &_ywmin, GLdouble &_ywmax,
+                                 GLdouble &_znear,
+                                 GLdouble &_zfar) const;
+
+    void getProyeccionPerspectiva(GLdouble &_angulo, GLdouble &_raspecto, GLdouble &_znear, GLdouble &_zfar) const;
 };
 
 #endif   // __IGVCAMARA

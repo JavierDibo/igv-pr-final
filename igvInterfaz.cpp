@@ -83,6 +83,73 @@ void igvInterfaz::inicia_bucle_visualizacion() {
     glutMainLoop(); // inicia el bucle de visualización de GLUT
 }
 
+void igvInterfaz::mover_luces() {
+
+    GLfloat light_position[4] = {1.0, 1.0, 1.0, 1.0};
+    GLfloat light_diffuse[4] =  {1.0, 1.0, 1.0, 1.0};
+    GLfloat light_ambient[4] = {1.0, 1.0, 1.0, 1.0};
+    GLfloat light_specular[4] = {1.0, 1.0, 1.0, 1.0};
+
+    // Cambia el color de la luz según la habitación
+    switch (pos_luz) {
+        case 1:
+            std::cout << "1 ";
+            light_diffuse[0] = 0.0; // Rojo
+            light_diffuse[1] = 1.0; // Verde
+            light_diffuse[2] = 1.0; // Azul
+            light_position[0] = 0;
+            light_position[1] = 0;
+            light_position[2] = 0;
+            break;
+        case 2:
+            std::cout << "2 ";
+            light_diffuse[0] = 1.0;
+            light_diffuse[1] = 0.0;
+            light_diffuse[2] = 0.0;
+            light_position[0] = 5;
+            light_position[1] = -5;
+            light_position[2] = 0;
+            break;
+        case 3:
+            std::cout << "3 ";
+            light_diffuse[0] = 1.0;
+            light_diffuse[1] = 1.0;
+            light_diffuse[2] = 0.0;
+            light_position[0] = 30;
+            light_position[1] = 5;
+            light_position[2] = 5;
+            break;
+        case 4: // Verde claro
+            std::cout << "4 ";
+            light_diffuse[0] = 1.0;
+            light_diffuse[1] = 0.0;
+            light_diffuse[2] = 1.0;
+            light_position[0] = 0;
+            light_position[1] = 5;
+            light_position[2] = 0;
+            break;
+        default:
+            std::cout << "def ";
+            light_diffuse[0] = 1.0;
+            light_diffuse[1] = 1.0;
+            light_diffuse[2] = 1.0;
+            light_position[0] = 5;
+            light_position[1] = 5;
+            light_position[2] = 5;
+            break;
+    }
+
+    glLightfv(GL_LIGHT0, GL_POSITION, light_position);
+    glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse);
+    glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
+
+    glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHT0);
+
+    _instancia->pos_luz = (_instancia->pos_luz + 1) % NUM_POSICIONES_LUZ;
+}
+
 void igvInterfaz::mover_camara() {
     double num;
     _instancia->posicion_camara = (_instancia->posicion_camara + 1) % NUM_POSICIONES_CAMARA;
@@ -92,8 +159,24 @@ void igvInterfaz::mover_camara() {
     igvPunto3D r = {0, 0, 0 + num};
     igvPunto3D V = {0, 1, 0};
 
-    _instancia->camara.set(IGV_PARALELA, P0, r, V, -1 * 5, 1 * 5, -1 * 5, 1 * 5, -1 * 3,
-                           200);
+    // Obtener el tipo actual de la cámara
+    tipoCamara tipoActual = _instancia->camara.getTipo();
+
+    // Configurar la cámara manteniendo el tipo actual
+    if (tipoActual == IGV_PARALELA || tipoActual == IGV_FRUSTUM) {
+        // Mantener los parámetros de proyección actuales
+        double xwmin, xwmax, ywmin, ywmax, znear, zfar;
+        _instancia->camara.getProyeccionParalelaFrustum(xwmin, xwmax, ywmin, ywmax, znear, zfar);
+        _instancia->camara.set(tipoActual, P0, r, V, xwmin, xwmax, ywmin, ywmax, znear, zfar);
+    } else if (tipoActual == IGV_PERSPECTIVA) {
+        // Mantener los parámetros de proyección actuales para perspectiva
+        double angulo, raspecto, znear, zfar;
+        _instancia->camara.getProyeccionPerspectiva(angulo, raspecto, znear, zfar);
+        _instancia->camara.set(tipoActual, P0, r, V, angulo, raspecto, znear, zfar);
+    }
+
+    // Aplicar los cambios
+    _instancia->camara.aplicar();
 }
 
 void igvInterfaz::mover_luz(int num_pasos) {
@@ -110,11 +193,6 @@ void igvInterfaz::mover_luz(int num_pasos) {
     }
 }
 
-void igvInterfaz::cambiar_de_luz() {
-    _instancia->posicion_luz = (_instancia->posicion_luz + 1) % NUM_POSICIONES_CAMARA;
-}
-
-
 void igvInterfaz::keyboardFunc(unsigned char key, int x, int y) {
 
     switch (key) {
@@ -122,10 +200,10 @@ void igvInterfaz::keyboardFunc(unsigned char key, int x, int y) {
             _instancia->mover_camara();
             break;
         case 'l':
-            _instancia->cambiar_de_luz();
+            _instancia->mover_luces();
             break;
         case 'k':
-            _instancia->mover_luz(30);
+            _instancia->camara.cambiar_tipo_camara();
             break;
         case 'z':
             _instancia->camara.zoom(-2);
@@ -204,7 +282,6 @@ void igvInterfaz::displayFunc() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // borra la ventana y el z-buffer
     // se establece el viewport
     glViewport(0, 0, _instancia->get_ancho_ventana(), _instancia->get_alto_ventana());
-
 
     // aplica las transformaciones en función de los parámetros de la cámara
     _instancia->camara.aplicar();

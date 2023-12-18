@@ -18,6 +18,7 @@
 #include "igvCamara.h"
 
 #define NUM_POSICIONES_CAMARA 5
+#define NUM_POSICIONES_LUZ 4
 #define PROFUNDIDAD_MAX 3
 #define ALTURA_MAX 3.2
 #define ANGULO_MAX 360
@@ -46,7 +47,7 @@ private:
 
     int num_escena = 1;
     int posicion_camara = 0;
-    int posicion_luz = 0;
+    int pos_luz = 0;
 
 public:
     // Aplicación del patrón de diseño Singleton
@@ -93,13 +94,11 @@ public:
 
     void mover_camara();
 
-    void cambiar_de_luz();
-
-    void mover_luz();
-
     void mover_luz(int num_pasos);
 
     static void menuHandle(int value);
+
+    void mover_luces();
 };
 
 #endif   // __IGVINTERFAZ

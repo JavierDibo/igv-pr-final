@@ -1,3 +1,4 @@
+#include <iostream>
 #include "igvEscena3D.h"
 
 // Métodos constructores
@@ -443,12 +444,12 @@ void igvEscena3D::pintar_quad() {
 }
 
 
-void igvEscena3D::establecer_luces(int pos) {
+void igvEscena3D::establecer_luces() {
 
-    GLfloat light_position[] = {1.0, 1.0, 1.0, 0.0};
-    GLfloat light_ambient[] = {0.2, 0.2, 0.2, 1.0};
-    GLfloat light_diffuse[] = {0.8, 0.8, 0.8, 1.0};
-    GLfloat light_specular[] = {1.0, 1.0, 1.0, 1.0};
+    GLfloat light_position[4] = {0.0, 0.0, 0.0, 1.0};
+    GLfloat light_diffuse[4] =  {1.0, 1.0, 1.0, 1.0};
+    GLfloat light_ambient[4] = {1.0, 1.0, 1.0, 1.0};
+    GLfloat light_specular[4] = {1.0, 1.0, 1.0, 1.0};
 
     glLightfv(GL_LIGHT0, GL_POSITION, light_position);
     glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
@@ -457,50 +458,6 @@ void igvEscena3D::establecer_luces(int pos) {
 
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
-
-    // Cambia el color de la luz según la habitación
-    switch (pos) {
-        case 1:
-            light_diffuse[0] = 0.0; // Rojo
-            light_diffuse[1] = 1.0; // Verde
-            light_diffuse[2] = 1.0; // Azul
-            light_position[0] = 0;
-            light_position[1] = 0;
-            light_position[2] = 0;
-            break;
-        case 2:
-            light_diffuse[0] = 1.0;
-            light_diffuse[1] = 0.0;
-            light_diffuse[2] = 0.0;
-            light_position[0] = 5;
-            light_position[1] = -5;
-            light_position[2] = 0;
-            break;
-        case 3:
-            light_diffuse[0] = 1.0;
-            light_diffuse[1] = 1.0;
-            light_diffuse[2] = 0.0;
-            light_position[0] = 30;
-            light_position[1] = 5;
-            light_position[2] = 5;
-            break;
-        case 4: // Verde claro
-            light_diffuse[0] = 1.0;
-            light_diffuse[1] = 0.0;
-            light_diffuse[2] = 1.0;
-            light_position[0] = 0;
-            light_position[1] = 5;
-            light_position[2] = 0;
-            break;
-        default:
-            light_diffuse[0] = 1.0;
-            light_diffuse[1] = 1.0;
-            light_diffuse[2] = 1.0;
-            light_position[0] = 5;
-            light_position[1] = 5;
-            light_position[2] = 5;
-            break;
-    }
 }
 
 void igvEscena3D::visualizar(int escena) {  // crear luces
@@ -518,7 +475,7 @@ void igvEscena3D::visualizar(int escena) {  // crear luces
 
     // Escena seleccionada a través del menú (clic botón derecho)
     if (escena == EscenaA) {
-        renderEscenaA(0);
+        renderEscenaA();
     } else if (escena == EscenaB) {
         renderEscenaB();
     } else if (escena == EscenaC) {
@@ -528,12 +485,12 @@ void igvEscena3D::visualizar(int escena) {  // crear luces
     glPopMatrix(); // restaura la matriz de modelado
 }
 
-void igvEscena3D::renderEscenaA(int pos) {  // crear luces
+void igvEscena3D::renderEscenaA() {
 
     // crear el modelo
     glPushMatrix(); // guarda la matriz de modelado
 
-    establecer_luces(pos);
+    // establecer_luces();
 
     // se pintan los ejes
     if (ejes) { pintar_ejes(); }

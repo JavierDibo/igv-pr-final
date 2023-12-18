@@ -148,3 +148,46 @@ const igvPunto3D &igvCamara::getR() const {
 const igvPunto3D &igvCamara::getV() const {
     return V;
 }
+
+void igvCamara::cambiar_tipo_camara() {
+    switch (tipo) {
+        case IGV_PARALELA:
+            tipo = IGV_FRUSTUM;
+            set(tipo, P0, r, V, -5, 5, -5, 5, 2, 200); // Valores para frustum
+            break;
+        case IGV_FRUSTUM:
+            tipo = IGV_PERSPECTIVA;
+            set(tipo, P0, r, V, 45, 16.0/9.0, 1, 1000); // Valores para perspectiva
+            break;
+        case IGV_PERSPECTIVA:
+            tipo = IGV_PARALELA;
+            set(tipo, P0, r, V, -10, 10, -10, 10, 1, 100); // Valores para paralela
+            break;
+        default:
+            tipo = IGV_PARALELA;
+            set(tipo, P0, r, V, -10, 10, -10, 10, 1, 100); // Valores predeterminados para paralela
+            break;
+    }
+
+    aplicar(); // Aplicar los cambios
+}
+
+tipoCamara igvCamara::getTipo() const {
+    return tipo;
+}
+
+void igvCamara::getProyeccionParalelaFrustum(GLdouble& _xwmin, GLdouble& _xwmax, GLdouble& _ywmin, GLdouble& _ywmax, GLdouble& _znear, GLdouble& _zfar) const {
+    _xwmin = xwmin;
+    _xwmax = xwmax;
+    _ywmin = ywmin;
+    _ywmax = ywmax;
+    _znear = znear;
+    _zfar = zfar;
+}
+
+void igvCamara::getProyeccionPerspectiva(GLdouble& _angulo, GLdouble& _raspecto, GLdouble& _znear, GLdouble& _zfar) const {
+    _angulo = angulo;
+    _raspecto = raspecto;
+    _znear = znear;
+    _zfar = zfar;
+}

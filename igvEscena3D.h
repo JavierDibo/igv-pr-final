@@ -49,7 +49,7 @@ public:
     const char *Nombre_EscenaC = "Escena C";
 
 // método con las llamadas OpenGL para renderEscenaA la escena
-    void renderEscenaA(int pos);
+    void renderEscenaA();
 
     void renderEscenaB();
 
@@ -81,8 +81,6 @@ public:
 
     ~igvEscena3D();
 
-    // TODO: Apartado B: Métodos para renderEscenaA cada parte del modelo
-
     void base();
 
     void pierna();
@@ -106,8 +104,6 @@ public:
     void visualizarCabeza();
 
     void visualizarMunneco();
-
-    // TODO: Apartado C: añadir aquí los métodos para modificar los grados de libertad del modelo
 
     void rotarCabeza(int ang);
 
@@ -187,7 +183,7 @@ public:
 
     void rotar_derecha(double scale);
 
-    void establecer_luces(int pos);
+    void establecer_luces();
 
     void pintar_quad();
 
